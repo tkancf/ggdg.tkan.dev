@@ -1,0 +1,87 @@
+baseurl = "https://ggdg.tkancf.org/" # Hostname (and path) to the root.
+title = "ggdG:wq!" # Site title.
+theme = "coder-portfolio" # Set the theme.
+languagecode = "ja" # The site’s language code used to generate RSS.
+defaultcontentlanguage = "ja" # The default content language.
+
+googleAnalytics = "UA-89403151-6"
+
+paginate = 20 # Default number of pages per page in pagination.
+
+pygmentsstyle = "b2" # Color-theme or style for syntax highlighting.
+pygmentscodefences = true # Enable code fence background highlighting.
+pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
+pygmentsUseClasses = true # new add
+
+#disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
+
+[params] # theme parameters
+    author = "tkan" # Author's name.
+    info = "Infrastructure Engineer" # Author's job title or info.
+    description = "tkan's personal website" # Site description.
+    keywords = "blog,personal,portfolio" # Site keywords.
+    avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
+
+    footercontent = "" # Add footer content
+    fixedbarContent = "" # Add fixedbar content
+    fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
+
+    # Whether you want to hide copyright and credits in the footer.
+    hideCredits = true
+    hideCopyright = false
+
+    # Custom CSS
+    custom_css = []
+
+    # Alignment of Mobile Menu items
+    itemscentered = true
+
+    # RTL support
+    rtl = false
+
+    # Bottom sns share
+    snsShare = true # new add
+    # Popular sns share
+    # if you want add sns. please message!
+    enableTwitterShare = true  # new add
+    enableFacebookShare = true # new add
+    enableHatenaShare = true   # new add
+    enableLineShare = false     # new add
+    enableLinkedInShare = true # new add
+
+    thumbnail = "images/tn.png?123" # default sns thumbnail
+
+    # Multilanguage mode
+    langseparator = "|" # Separates menus from language selectors when site is multilingual.
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/tkancf/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 2
+    url = "https://twitter.com/tkancf/"
+#[[params.social]]
+#    name = "LinkedIn"
+#    icon = "fab fa-linkedin"
+#    weight = 3
+#    url = "https://www.linkedin.com/in/tkancf/"
+#[[params.social]]
+#    # If icon is not set, Text is displayed.
+#    name = "LinkedIn"
+#    weight = 4
+#    url = "https://www.linkedin.com/in/tkancf/"
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "posts"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "about"
