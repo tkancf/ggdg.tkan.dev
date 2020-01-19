@@ -13,6 +13,7 @@ pygmentscodefences = true # Enable code fence background highlighting.
 pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
 pygmentsUseClasses = true # new add
 
+enableRobotsTXT = true
 #disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
 
 [params] # theme parameters
