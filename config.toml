@@ -29,7 +29,7 @@ enableRobotsTXT = true
 
     # Whether you want to hide copyright and credits in the footer.
     hideCredits = true
-    hideCopyright = false
+    hideCopyright = true
 
     # Custom CSS
     custom_css = []
