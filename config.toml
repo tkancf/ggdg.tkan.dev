@@ -66,16 +66,6 @@ enableRobotsTXT = true
     icon = "fab fa-twitter"
     weight = 2
     url = "https://twitter.com/tkancf/"
-#[[params.social]]
-#    name = "LinkedIn"
-#    icon = "fab fa-linkedin"
-#    weight = 3
-#    url = "https://www.linkedin.com/in/tkancf/"
-#[[params.social]]
-#    # If icon is not set, Text is displayed.
-#    name = "LinkedIn"
-#    weight = 4
-#    url = "https://www.linkedin.com/in/tkancf/"
 
 # Menu links
 [[menu.main]]
