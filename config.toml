@@ -20,7 +20,7 @@ enableRobotsTXT = true
     author = "tkan" # Author's name.
     info = "Infrastructure Engineer" # Author's job title or info.
     description = "tkan's personal website" # Site description.
-    keywords = "blog,personal,portfolio" # Site keywords.
+    keywords = "blog" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
     footercontent = "" # Add footer content
@@ -69,10 +69,10 @@ enableRobotsTXT = true
 
 # Menu links
 [[menu.main]]
-    name = "Blog"
+    name = "Blog posts"
     weight = 1
-    url  = "posts"
+    url  = "posts/"
 [[menu.main]]
     name = "About"
     weight = 2
-    url = "about"
+    url = "about/"
