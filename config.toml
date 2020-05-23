@@ -15,6 +15,8 @@ pygmentsUseClasses = true # new add
 
 enableRobotsTXT = true
 #disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
+preserveTaxonomyNames = false
+pluralizeListTitles = false
 
 [params] # theme parameters
     author = "tkan" # Author's name.
