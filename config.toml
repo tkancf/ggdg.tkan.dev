@@ -19,9 +19,9 @@ preserveTaxonomyNames = false
 pluralizeListTitles = false
 
 [params] # theme parameters
-    author = "tkan" # Author's name.
+    author = "Tkan" # Author's name.
     info = "Infrastructure Engineer" # Author's job title or info.
-    description = "tkan's personal website" # Site description.
+    description = "Tkan's personal website" # Site description.
     keywords = "blog" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
