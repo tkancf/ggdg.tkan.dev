@@ -71,7 +71,7 @@ pluralizeListTitles = false
 
 # Menu links
 [[menu.main]]
-    name = "Blog posts"
+    name = "Posts"
     weight = 1
     url  = "posts/"
 [[menu.main]]
