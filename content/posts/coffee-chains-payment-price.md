@@ -1,7 +1,7 @@
 ---
 title: "各コーヒーチェーンの値段と支払い方法"
 date: 2019-10-15T21:31:25+09:00
-tags: "memo"
+tags: ["コーヒー", "memo"]
 draft: false
 thumbnail: "images/tn.png?"
 description: "各コーヒーチェーンの値段とiD, Suica, PayPay,クレジットカードに対応してるかのメモ"

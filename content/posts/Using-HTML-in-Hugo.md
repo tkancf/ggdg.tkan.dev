@@ -1,7 +1,7 @@
 ---
 title: "Hugo で生HTMLを書く方法"
 date: 2020-01-16T19:15:30+09:00
-tags: "メモ"
+tags: ["Knowledge", "Hugo"]
 thumbnail: "images/tn.png??"
 description: "Hugo で生HTMLを書く"
 draft: false

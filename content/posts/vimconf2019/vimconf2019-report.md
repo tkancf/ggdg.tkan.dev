@@ -2,7 +2,7 @@
 draft = false
 date = 2019-11-05T20:25:42+09:00
 title = "VimConf2019に行ってきました"
-tags = ["vim", "vimconf2019", "vimconf", "参加レポート"]
+tags = ["vim", "vimconf", "参加レポート"]
 thumbnail = "posts/vimconf2019/vimconf2019_icon.jpg"
 description = "VimConf2019に参加した感想"
 +++

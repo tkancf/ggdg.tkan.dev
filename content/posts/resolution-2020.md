@@ -1,7 +1,7 @@
 ---
 title: "2020年の抱負"
 date: 2020-01-09T01:12:57+09:00
-tags: "[2020年の抱負]"
+tags: ["抱負"]
 thumbnail: "images/tn.png"
 description: "2020年の抱負"
 draft: false
