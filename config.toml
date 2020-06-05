@@ -1,12 +1,12 @@
-baseurl = "https://ggdg.tkancf.org/" # Hostname (and path) to the root.
-title = "ggdG:wq!" # Site title.
-theme = "coder-portfolio" # Set the theme.
-languagecode = "ja" # The site’s language code used to generate RSS.
-defaultcontentlanguage = "ja" # The default content language.
+baseurl = "https://ggdg.tkancf.org/"
+title = "ggdG:wq!"
+theme = "coder-portfolio"
+languagecode = "ja"
+defaultcontentlanguage = "ja"
 
 googleAnalytics = "UA-89403151-6"
 
-paginate = 20 # Default number of pages per page in pagination.
+paginate = 20
 
 pygmentsstyle = "b2" # Color-theme or style for syntax highlighting.
 pygmentscodefences = true # Enable code fence background highlighting.
@@ -14,7 +14,6 @@ pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences wi
 pygmentsUseClasses = true # new add
 
 enableRobotsTXT = true
-#disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
 preserveTaxonomyNames = false
 pluralizeListTitles = false
 
@@ -22,7 +21,7 @@ pluralizeListTitles = false
     author = "Tkan" # Author's name.
     info = "Infrastructure Engineer" # Author's job title or info.
     description = "Tkan's personal website" # Site description.
-    keywords = "blog" # Site keywords.
+    keywords = "Blog, config, engineering, Computer Science" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
     footercontent = "" # Add footer content
@@ -46,11 +45,11 @@ pluralizeListTitles = false
     snsShare = true # new add
     # Popular sns share
     # if you want add sns. please message!
-    enableTwitterShare = true  # new add
-    enableFacebookShare = true # new add
-    enableHatenaShare = true   # new add
-    enableLineShare = false     # new add
-    enableLinkedInShare = true # new add
+    enableTwitterShare = true
+    enableFacebookShare = true
+    enableHatenaShare = true
+    enableLineShare = false
+    enableLinkedInShare = true
 
     thumbnail = "images/tn.png?123" # default sns thumbnail
 
@@ -71,10 +70,14 @@ pluralizeListTitles = false
 
 # Menu links
 [[menu.main]]
-    name = "Posts"
+    name = "Blog"
     weight = 1
     url  = "posts/"
 [[menu.main]]
-    name = "About"
+    name = "Tags"
+    url = "tags"
     weight = 2
+[[menu.main]]
+    name = "About"
     url = "about/"
+    weight = 3
