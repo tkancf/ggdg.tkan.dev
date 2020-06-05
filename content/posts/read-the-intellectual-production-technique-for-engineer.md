@@ -3,8 +3,9 @@ title: "エンジニアの知的生産術を読みました"
 date: 2019-12-24T00:27:26+09:00
 tags: ["読んだ"]
 thumbnail: "images/tn.png"
-description: "エンジニアの知的生産術を読んだので、感想を書きました。"
+description: "エンジニアの知的生産術を読んだので、感想を書きました"
 draft: false
+
 ---
 
 [エンジニアの知的生産術 ―効率的に学び、整理し、アウトプットする](https://amzn.to/2s5ccrz)
