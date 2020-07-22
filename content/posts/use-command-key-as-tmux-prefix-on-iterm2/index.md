@@ -39,7 +39,7 @@ Iterm2にはキーボードショートカットを自分で登録する機能�
 
 どのキーがASCIIコードの16進数で何に該当するのかは下記サイトとかみると分かります。
 
-ＡＳＣＩＩコード表: https://ja.wikipedia.org/wiki/制御文字
+ＡＳＣＩＩコード表: https://ja.wikipedia.org/wiki/ASCII
 
 ### tmux側の設定
 
