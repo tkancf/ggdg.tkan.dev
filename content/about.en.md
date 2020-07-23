@@ -4,21 +4,11 @@ date: 2019-10-09T19:47:13+09:00
 draft: false
 ---
 
-------------------------------
+## Tkan
 
-## tkancf
+- Infrastructure Engineer
 
-- よわよわエンジニア
-- つよつよエンジニアになりたい
+## Links
 
-### Skills
-
-- お仕事でよく使うもの
-    - bash (ワンライナー)
-    - AWS
-- 簡単なものなら書ける言語
-    - Golang
-    - JavaScript
-    - Python
-
-- お仕事ではあまりコード書かないので、おうちでちゃんと勉強していきたい
+- GitHub: https://github.com/tkancf
+- Twitter: https://twitter.com/tkancf

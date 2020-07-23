@@ -19,7 +19,7 @@ pluralizeListTitles = false
 
 [params] # theme parameters
     author = "Tkan" # Author's name.
-    info = "Infrastructure Engineer" # Author's job title or info.
+    info = "Tkanの個人ブログ" # Author's job title or info.
     description = "Tkan's personal website" # Site description.
     keywords = "Blog, config, engineering, Computer Science" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.

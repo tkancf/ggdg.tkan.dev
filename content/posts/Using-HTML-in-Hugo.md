@@ -1,7 +1,7 @@
 ---
 title: "Hugo で生HTMLを書く方法"
 date: 2020-01-16T19:15:30+09:00
-tags: ["Knowledge", "Hugo"]
+tags: ["tech", "Knowledge", "Hugo"]
 thumbnail: "images/tn.png??"
 description: "Hugoのデフォルト設定ではHTMLコードを生で書くことが出来ないので、HugoのshortCode機能を利用してHTMLコードを利用できるようにする方法を書く"
 draft: false
