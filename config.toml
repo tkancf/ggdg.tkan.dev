@@ -19,7 +19,7 @@ pluralizeListTitles = false
 
 [params] # theme parameters
     author = "Tkan" # Author's name.
-    info = "Tkanの個人ブログ" # Author's job title or info.
+    info = "Infrastructure Engineer" # Author's job title or info.
     description = "Tkan's personal website" # Site description.
     keywords = "Blog, config, engineering, Computer Science" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
@@ -90,7 +90,7 @@ pluralizeListTitles = false
         # You can configure the theme parameter for each language. 
         [languages.ja.params]
         author = "Tkan"
-        info = "Infrastructure Engineer"
+        info = "ggdG:wq! - Tkanの雑記ブログ"
 
         description = "Tkan's personal website"
         keywords = "blog,developer,personal"
@@ -116,7 +116,7 @@ pluralizeListTitles = false
             author = "Tkan"
             description = "Tkan's personal website"
             keywords = "blog, ブログ, エンジニア"
-            info = "Infrastructure Engineer"
+            info = "ggdG:wq! - Tkan's blog"
 
         [languages.en.menu]
 
