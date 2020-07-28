@@ -3,7 +3,7 @@ title: "Commandキーをtmuxのプレフィックスキーとして使う on Ite
 date: 2020-05-11T04:50:09+09:00
 tags: ["tech", "tmux", "Iterm2", "Mac", "config"]
 thumbnail: "images/tn.png??"
-description: "Iterm2ならCommandキーをtmuxのプレフィックスキーとして使用することが出来ることに最近気づきました。Commandキーをプレフィックスキーとして使えると、小指に優しいので設定方法を共有しておきます。"
+description: "Commandキーをtmuxのプレフィックスキーとして使う方法"
 draft: false
 ---
 

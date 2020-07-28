@@ -3,7 +3,7 @@ title: "エンジニアの知的生産術を読みました"
 date: 2019-12-24T00:27:26+09:00
 tags: ["tech", "読んだ"]
 thumbnail: "images/tn.png"
-description: "エンジニアの知的生産術を読んだので、感想を書きました"
+description: "エンジニアの知的生産術を読んだ読書メモ"
 draft: false
 
 ---

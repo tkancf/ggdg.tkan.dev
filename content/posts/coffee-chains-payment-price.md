@@ -4,7 +4,7 @@ date: 2019-10-15T21:31:25+09:00
 tags: ["コーヒー", "memo"]
 draft: false
 thumbnail: "images/tn.png?"
-description: "各コーヒーチェーンの値段とiD, Suica, PayPay, クレジットカード等の電子マネー払いに対応してるかの表"
+description: "各コーヒーチェーンの値段と電子マネー払いに対応してるかのメモ"
 
 ---
 
