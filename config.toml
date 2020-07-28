@@ -69,63 +69,59 @@ pluralizeListTitles = false
     url = "https://twitter.com/tkancf/"
 
 # Menu links
-# [[menu.main]]
-#     name = "Blog"
-#     weight = 1
-#     url  = "posts/"
-# [[menu.main]]
-#     name = "Tags"
-#     url = "tags"
-#     weight = 2
-# [[menu.main]]
-#     name = "About"
-#     url = "about/"
-#     weight = 3
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "posts/"
+[[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 3
 
-[languages]
-    [languages.ja]
-        languagename = "Switch to Japanese" # The language name to be displayed in the selector.
-        title = "ggdG:wq!"
-
-        # You can configure the theme parameter for each language. 
-        [languages.ja.params]
-        author = "Tkan"
-        info = "ggdG:wq! - Tkanの雑記ブログ"
-
-        description = "Tkan's personal website"
-        keywords = "blog,developer,personal"
-
-        [languages.ja.menu] # It is possible to change the menu too.
-
-        [[languages.ja.menu.main]]
-        name = "About"
-        weight = 1.0
-        url = "about"
-
-        [[languages.ja.menu.main]]
-        name = "ブログ"
-        weight = 2.0
-        url = "posts"
-
-
-    [languages.en]
-        languagename = "Switch to English"
-        title = "ggdG:wq!"
-
-        [languages.en.params]
-            author = "Tkan"
-            description = "Tkan's personal website"
-            keywords = "blog, ブログ, エンジニア"
-            info = "ggdG:wq! - Tkan's blog"
-
-        [languages.en.menu]
-
-            [[languages.en.menu.main]]
-            name = "About"
-            weight = 1.0
-            url = "en/about"
-
-            [[languages.en.menu.main]]
-            name = "Blog"
-            weight = 2.0
-            url = "en/posts"
+# [languages]
+#     [languages.ja]
+#         languagename = "Switch to Japanese" # The language name to be displayed in the selector.
+#         title = "ggdG:wq!"
+# 
+#         # You can configure the theme parameter for each language. 
+#         [languages.ja.params]
+#         author = "Tkan"
+#         info = "ggdG:wq! - Tkanの雑記ブログ"
+# 
+#         description = "Tkan's personal website"
+#         keywords = "blog,developer,personal"
+# 
+#         [languages.ja.menu] # It is possible to change the menu too.
+# 
+#         [[languages.ja.menu.main]]
+#         name = "About"
+#         weight = 1.0
+#         url = "about"
+# 
+#         [[languages.ja.menu.main]]
+#         name = "ブログ"
+#         weight = 2.0
+#         url = "posts"
+# 
+# 
+#     [languages.en]
+#         languagename = "Switch to English"
+#         title = "ggdG:wq!"
+# 
+#         [languages.en.params]
+#             author = "Tkan"
+#             description = "Tkan's personal website"
+#             keywords = "blog, ブログ, エンジニア"
+#             info = "ggdG:wq! - Tkan's blog"
+# 
+#         [languages.en.menu]
+# 
+#             [[languages.en.menu.main]]
+#             name = "About"
+#             weight = 1.0
+#             url = "en/about"
+# 
+#             [[languages.en.menu.main]]
+#             name = "Blog"
+#             weight = 2.0
+#             url = "en/posts"
