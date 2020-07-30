@@ -6,7 +6,12 @@ draft: false
 
 ------------------------------
 
-## あなたは誰?
+## Links
+
+- GitHub: https://github.com/tkancf
+- Twitter: https://twitter.com/tkancf
+
+## Who are you?
 
 「てぃーかん」です。  
 新宿の某社でインフラエンジニアとして働いています。  
@@ -17,7 +22,8 @@ CLIツール周りが好きで、よくいじっています。好きなエデ�
 
 ## 出来ること
 
-[(技術的に)私が知っていること・知らないこと](/posts/what_i_know_and_dont_know/) というブログポストがあります。
+[(技術的に)私が知っていること・知らないこと](/posts/what_i_know_and_dont_know/) というブログポストがありますので、
+詳しいことを観たかったらそちらを確認して下さい。  
 
 ## 趣味
 
