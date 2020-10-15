@@ -8,12 +8,8 @@ draft: false
 ---
 
 Vimの設定がごちゃごちゃしてきていたので、久々に vimrc 大掃除して使っていないプラグインを消したりキーマップを考え直したりしました。  
-プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておきます。
-
-## 概要
-
-- LSPは便利
-- 私の今の[vimrc](https://github.com/tkancf/dotfiles/blob/master/vimrc)
+プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておきます。  
+私の今の[vimrc](https://github.com/tkancf/dotfiles/blob/master/vimrc)
 
 ## 整理する上で意識したこと
 
