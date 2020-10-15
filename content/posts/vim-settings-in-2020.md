@@ -1,75 +1,86 @@
 ---
-title: "Vim Settings in 2020"
-date: 2020-10-14T00:55:32+09:00
+title: "Vimの設定整理した(2020年版)"
+date: 2020-10-15T00:55:32+09:00
 tags: ["tech", "vim", "vimrc", "config"]
 thumbnail: "images/tn.png??"
-description: "2020年のvimrc設定まとめ"
-draft: true
+description: "Vimの設定まとめ in 2020年"
+draft: false
 ---
 
-vimrcがごちゃごちゃしてきていたので、久々に大掃除として使っていないプラグインを消したりキーマップを考え直したりしました。  
-プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておこうと思います。
+Vimの設定がごちゃごちゃしてきていたので、久々に vimrc 大掃除して使っていないプラグインを消したりキーマップを考え直したりしました。  
+プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておきます。
+
+## 概要
+
+- LSPは便利
+- 私の今の[vimrc](https://github.com/tkancf/dotfiles/blob/master/vimrc)
 
 ## 整理する上で意識したこと
 
-- `features=huge` でコンパイルされた Vim8(>=8.0.1453) で動作すること
+- features=huge でコンパイルされた Vim8(>=8.0.1453) で動作すること
 - Neovim のことは考えない
 - Windows での動作は考えない
+- 基本的に .vimrc 1ファイルを管理する
 
-### `features=huge` でコンパイルされた Vim8(>=8.0.1453) で動作すること
+### features=huge でコンパイルされた Vim8(>=8.0.1453) で動作すること
 
 私が開発したくなるような環境では Vim8(>=8.0.1453) が入っているか、容易にインストール可能なはずなので、 Vim7 以下については考慮しないようにしました。  
-`features=huge` だけだと、 `+python3` が入りませんが、 `+python3` が有効化されているか確認し、必要があれば有効化する等の作業が個人的に煩わしいため、切り捨てました。
+features=huge だけだと、 +python3, +lua が入りませんが、有効化されているか確認して必要があれば有効化する等の作業が個人的に煩わしいため、切り捨てました。
 
 ### Neovim のことは考えない
 
-私はNeovimを使用していないので、そもそも検討しないことにしました。  
-たまに情報が入ってくるのですが、現状「どうしても Neovim でないと駄目！」って機能が個人的には無いので乗り換える予定もないです。
+私はNeovimを使用していないので、そもそも検討していません。  
+たまに情報を追ってはいるのですが、現状「どうしても Neovim でないと駄目！」って機能が個人的には無いので乗り換える予定もないです。
 
 ### Windows での動作は考えない
 
 現在、家にも職場にも Windows 環境が無いので、検討しないことにしました。  
 WSL2 もあるので。
 
+### 基本的に .vimrc 1ファイルを管理する
+
+1ファイルに全部の設定を書き、プラグインのロード、プラグインの設定等のカテゴリごとに fold しています。
+
 ## キーマップの割り当て
 
 下手なマッピングをするとデフォルトの設定を上書きしてしまったり、覚えられないキーマップを設定してしまったりするため、ある程度規則性を持たせることにしました。  
-`<Leader>` キーはデフォルトの `\` をそのまま使用し、プラグインのショートカット等に使用するプレフィックスキーとして以下の5キーを利用します。  
+\<Leader> キーはデフォルトの \ をそのまま使用し、プラグインのショートカット等に使用するキーとして以下の5キーを利用します。  
 
-### `<Leader>` キー (`\` キー)
+### \<Leader> キー (\ キー)
 
 プラグイン用のキー。デフォルトでは何も割り当てられていないので自由に使える。  
-他のキーに変えたりはせず、そのまま `\` を使用します。
+他のキーに変えたりはせず、そのまま \ をプレフィックスキーとして使用します。
 
-### `<Enter>` キー
+### \<Enter> キー
 
-デフォルトだと "カーソルを N 行下の先頭の CHAR へ移動するキー。"(`N`j<C-^>と同等のハズ)  
-使わない機能だと思ったので潰して、第2のプレフィックスキーになってもらうことにしました。
+デフォルトだと "カーソルを N 行下の先頭の CHAR へ移動するキー。"(Nj\<C-^>と同等のハズ)  
+デカイキーなのに使わない機能なので潰して、第2のプレフィックスキーになってもらうことにしました。
 
-### `s` キー
+### s キー
 
-デフォルトだと `cl` と同等の機能。  
-第3のプレフィックスキーとして働いてもらいます。
+デフォルトだと cl と同等の機能。  
+比較的押しやすい位置にある使わない機能を持ったキーなので、第3のプレフィックスキーとして働いてもらいます。
 
-### `<Space>` キー
+### \<Space> キー
 
-デフォルトだと `l` と同等の機能。  
-でかくていい位置にあるキーなので、第4のプレフィックスキーとしてよく使うプラグインを担当してもらいます。
+デフォルトだと l と同等の機能。  
+でかくていい位置にあり、間違いなく使わない機能なので、第4のプレフィックスキーとしてよく使うプラグインを担当してもらいます。
 
 ### 方向キー
 
-ノーマルモードでの方向キー `h`, `j` ,`k`, `l` と同等の機能。  
-`h`, `j` ,`k`, `l` が壊れない限りは移動キーとして使わないので、よく使うプラグインのキーバインドとして使うことにしました。
+ノーマルモードでは方向キー h, j ,k, l と同等の機能。  
+h, j ,k, l が壊れない限りは移動キーとして使わないので、gina.vimのキーバインドとして使うことにしました。  
+矢印キーを押すとgitのdiffを確認したり、commit出来たりします。
 
 それぞれの用途はざっくり以下のように決めました。
 
-- `<Leader>` キー
+- \<Leader> キー
     - LSPの機能
-- `<Enter>` キー
+- \<Enter> キー
     - coc.nvim
-- `s` キー
+    - s キー
     - vim-operator-surround
-- `<Space>` キー
+- \<Space> キー
     - vim-quickrun
     - CtrlP
     - open-browser
@@ -79,12 +90,15 @@ WSL2 もあるので。
 
 ## プラグイン
 
-`+python3` も `+lua` もないので、なるべくピュア Vim だけで動作するプラグインを選択するようにしています。  
-[neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) が node を事前にインストールしておく必要があったりしますが、node がインストールされていない時は vim-lsp を使うように分岐させています。
++python3 も +lua もないので、なるべくピュア Vim だけで動作するプラグインを選択するようにしています。  
+現状だと、唯一[neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) が node を事前にインストールしておく必要がありますが、node がインストールされていない時は vim-lsp を使うように分岐させています。  
+下に挙げたもの以外にもいくつか各言語用のプラグインを入れたり消したりしてますが、入れ替わりが激しいので省きます。
+
+※こっから下は入れてるプラグインとその雑な解説がつらつら書いてあるだけです。  
 
 ### [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
-プラグインマネージャー  
+プラグインマネージャー有名なやつです。  
 シンプルに使いやすいのでずっと使っています。
 
 ### [vim-scripts/wombat256.vim](https://github.com/vim-scripts/wombat256.vim)
@@ -94,7 +108,8 @@ WSL2 もあるので。
 
 ### [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim)
 
-Vimのステータスラインをいい感じに表示してくれるプラグイン
+Vimのステータスラインをいい感じに表示してくれるプラグイン  
+ステータスラインが見やすいとなんとなくモチベーションも上がるので。
 
 ### [vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja)
 
@@ -103,9 +118,7 @@ Vim のヘルプを日本語化するプラグイン
 ### [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
 
 ファイラプラグイン  
-個人的にはディレクトリツリーを開ければ良いので、NERDTreeである必要は特に無いです。  
-気が向いたらもう少し軽量なファイラプラグインに乗り換えるかも...。  
-`-` キーをディレクトリツリーの表示・非表示としてマッピングしています。
+個人的にはディレクトリツリーを開ければ良いので、NERDTreeである必要は特に無いです。- キーをディレクトリツリーの表示・非表示としてマッピングしています。
 
 ### [glidenote/memolist.vim](https://github.com/glidenote/memolist.vim)
 
@@ -117,7 +130,7 @@ Vim のヘルプを日本語化するプラグイン
 
 いわゆるセレクタプラグイン(unite.vim, denite.nvimと似た機能のプラグイン)  
 バッファ・直近で開いたファイル等の fuzzy finderとして利用できます。  
-バッファの移動・直近で開いたファイルの編集・`memolist.vim` で作成したメモ一覧の検索によく利用しています。
+バッファの移動・直近で開いたファイルの編集・memolist.vim で作成したメモ一覧の検索によく利用しています。
 
 ### [mattn/ctrlp-launcher](https://github.com/mattn/ctrlp-launcher)
 
@@ -126,7 +139,7 @@ CtrlPの拡張プラグインでランチャー機能を追加できるプラグ
 作者の方のブログ記事読むと完全に理解出来ます。[CtrlP にランチャ拡張書いたら捗りすぎて生きているのが辛い](https://mattn.kaoriya.net/software/vim/20120427205409.htm)  
 
 - TweetVimでつぶやく
-- `exe "CtrlP" g:memolist_path` を実行してmemolistのファイル一覧を検索
+- exe "CtrlP" g:memolist\_path を実行してmemolistのファイル一覧を検索
 - previm でMarkdownをプレビュー
 
 機能としてはシンプルですが、これ無しには生きていけない体にされています。  
@@ -144,7 +157,7 @@ CtrlP の絞り込みの対象を追加できるプラグイン
 
 テキストオブジェクトを指定の囲み文字で囲んだり、囲み文字を削除したり可能になるプラグイン  
 vim-surround と似た機能を持つプラグインですが、こちらのほうがカスタマイズ性が高い印象があったので好んで使っています。  
-このプラグインで `s` キーをプレフィックスとして利用しています。  
+このプラグインで s キーをプレフィックスとして利用しています。  
 
 [kana/vim-operator-user](https://github.com/kana/vim-operator-user) が前提プラグインとして必要になるので、併せてインストールしています。  
 
@@ -178,7 +191,7 @@ Markdown のプレビューができるプラグイン
 
 ### [haya14busa/vim-asterisk](https://github.com/haya14busa/vim-asterisk)
 
-`*` での検索時にカーソルを移動しないようにするプラグイン
+\* での検索時にカーソルを移動しないようにするプラグイン
 
 ### [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
 
@@ -211,7 +224,7 @@ markdownのメモ, Makefileの雛形, main関数 等のよく入力するお決�
 LSPクライアントプラグイン  
 [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings)というプラグインがあり、設定をあまりせずコマンド一つで Language Server をインストールできるので利用しています。
 
-### [prabirshrestha/asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim), [prabirshrestha/async.vim](https://github.com/prabirshrestha/async.vim), [prabirshrestha/asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim)
+### [prabirshrestha/asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim) [prabirshrestha/async.vim](https://github.com/prabirshrestha/async.vim) [prabirshrestha/asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim)
 
 LSPの補完プラグインとその依存プラグイン  
 
@@ -223,7 +236,7 @@ nodeをインストールした環境では vim-lsp ではなく、こちらを�
 ### [Shougo/neosnippet.vim](https://github.com/Shougo/neosnippet.vim), [Shougo/neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets)
 
 スニペットプラグインとそのスニペット集  
-coc.nvim から利用しています。
+coc.nvim からスニペット候補を出せるようにしています。  
 
 ### [basyura/TweetVim](https://github.com/basyura/TweetVim)
 
