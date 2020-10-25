@@ -3,9 +3,11 @@ title: "Gitでマルチバイト文字列がエスケープされる対策"
 date: 2020-10-25T20:37:39+09:00
 tags: ["git", "config", "tech", "Knowledge"]
 thumbnail: "images/tn.png??"
-description: ""
-draft: true
+description: "デフォルトだとGitでマルチバイト文字列がエスケープされるのでその対策"
+draft: false
 ---
+
+デフォルトだとGitでマルチバイト文字列がエスケープされるのでその対策
 
 ## どうすればいいのか？
 
