@@ -1,10 +1,11 @@
 ---
 title: "各コーヒーチェーンの値段と支払い方法"
 date: 2019-10-15T21:31:25+09:00
-tags: ["コーヒー", "memo"]
-draft: false
+tags: ["コーヒー"]
+categories: ["knowledge"]
 thumbnail: "images/tn.png?"
 description: "各コーヒーチェーンの値段と電子マネー払いに対応してるかのメモ"
+draft: false
 
 ---
 

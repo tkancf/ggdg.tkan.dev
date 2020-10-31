@@ -1,7 +1,8 @@
 ---
 title: "やる気が出ないときに試すこと"
 date: 2020-07-09T01:15:30+09:00
-tags: "knowledge"
+tags: ["knowledge"]
+categories: ["knowledge"]
 thumbnail: "images/tn.png??"
 description: "やる気が出ないときにコレを試すと改善したという体験をもとにした知見まとめ"
 draft: false

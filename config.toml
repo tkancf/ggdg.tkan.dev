@@ -1,79 +1,144 @@
-baseurl = "https://ggdg.tkan.dev/"
+#baseurl = "https://ggdg.tkan.dev/"
+#title = "ggdG:wq!"
+#theme = "coder-portfolio"
+#languagecode = "ja"
+#defaultcontentlanguage = "ja"
+#
+#googleAnalytics = "UA-89403151-6"
+#
+#paginate = 20
+#
+#pygmentsstyle = "b2" # Color-theme or style for syntax highlighting.
+#pygmentscodefences = true # Enable code fence background highlighting.
+#pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
+#pygmentsUseClasses = true # new add
+#
+#enableRobotsTXT = true
+#preserveTaxonomyNames = false
+#pluralizeListTitles = false
+#
+#[params] # theme parameters
+#    author = "Tkan" # Author's name.
+#    info = "Infrastructure Engineer" # Author's job title or info.
+#    description = "Tkan's personal website" # Site description.
+#    keywords = "Blog, config, engineering, Computer Science" # Site keywords.
+#    avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
+#
+#    footercontent = "" # Add footer content
+#    fixedbarContent = "" # Add fixedbar content
+#    fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
+#
+#    # Whether you want to hide copyright and credits in the footer.
+#    hideCredits = true
+#    hideCopyright = true
+#
+#    # Custom CSS
+#    custom_css = []
+#
+#    # Alignment of Mobile Menu items
+#    itemscentered = true
+#
+#    # RTL support
+#    rtl = false
+#
+#    # Bottom sns share
+#    snsShare = true # new add
+#    # Popular sns share
+#    # if you want add sns. please message!
+#    enableTwitterShare = true
+#    enableFacebookShare = true
+#    enableHatenaShare = true
+#    enableLineShare = false
+#    enableLinkedInShare = true
+#
+#    thumbnail = "images/tn.png?123" # default sns thumbnail
+#
+#    # Multilanguage mode
+#    langseparator = "|" # Separates menus from language selectors when site is multilingual.
+#
+## Social links
+#[[params.social]]
+#    name = "Github"
+#    icon = "fab fa-github"
+#    weight = 1
+#    url = "https://github.com/tkancf/"
+#[[params.social]]
+#    name = "Twitter"
+#    icon = "fab fa-twitter"
+#    weight = 2
+#    url = "https://twitter.com/tkancf/"
+#
+## Menu links
+#[[menu.main]]
+#    name = "Blog"
+#    weight = 1
+#    url  = "posts/"
+#[[menu.main]]
+#    name = "About"
+#    url = "about/"
+#    weight = 3
+baseURL = "https://ggdg.tkan.dev/"
 title = "ggdG:wq!"
-theme = "coder-portfolio"
-languagecode = "ja"
-defaultcontentlanguage = "ja"
+theme = "erblog"
+paginate = 3
+languageCode = "ja"
+DefaultContentLanguage = "ja"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
 
-googleAnalytics = "UA-89403151-6"
+[params]
+    author = "tkancf"
+    badge = "orange"
+    quote = "red"
+    #notice = "Hello, world. This is a notification."
+    #notice_color = "red"
+    portrait = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
+    index_posts_num = 5
+    google_search = true
+    logo = "images/avatar.jpg"
+    bio = """
+    <p> This is BIO. You can write something here. </p>
+    <br />
+    <p>Also all html tags such as <a href="https://github.com/ertuil/erblog">link</a> are a good here.</p>
+    """
+    # copyright = ""
 
-paginate = 20
 
-pygmentsstyle = "b2" # Color-theme or style for syntax highlighting.
-pygmentscodefences = true # Enable code fence background highlighting.
-pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
-pygmentsUseClasses = true # new add
-
-enableRobotsTXT = true
-preserveTaxonomyNames = false
-pluralizeListTitles = false
-
-[params] # theme parameters
-    author = "Tkan" # Author's name.
-    info = "Infrastructure Engineer" # Author's job title or info.
-    description = "Tkan's personal website" # Site description.
-    keywords = "Blog, config, engineering, Computer Science" # Site keywords.
-    avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
-
-    footercontent = "" # Add footer content
-    fixedbarContent = "" # Add fixedbar content
-    fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
-
-    # Whether you want to hide copyright and credits in the footer.
-    hideCredits = true
-    hideCopyright = true
-
-    # Custom CSS
-    custom_css = []
-
-    # Alignment of Mobile Menu items
-    itemscentered = true
-
-    # RTL support
-    rtl = false
-
-    # Bottom sns share
-    snsShare = true # new add
-    # Popular sns share
-    # if you want add sns. please message!
-    enableTwitterShare = true
-    enableFacebookShare = true
-    enableHatenaShare = true
-    enableLineShare = false
-    enableLinkedInShare = true
-
-    thumbnail = "images/tn.png?123" # default sns thumbnail
-
-    # Multilanguage mode
-    langseparator = "|" # Separates menus from language selectors when site is multilingual.
-
-# Social links
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github"
-    weight = 1
-    url = "https://github.com/tkancf/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter"
-    weight = 2
-    url = "https://twitter.com/tkancf/"
-
-# Menu links
 [[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "posts/"
-[[menu.main]]
+    identifier = "about"
     name = "About"
-    url = "about/"
-    weight = 3
+    url = "/about/"
+    weight = 10
+
+# [[menu.main]]
+#     identifier = "zone"
+#     name = "Zone"
+#     url = "/zone/"
+#     weight = 10
+
+[[menu.footer]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 1
+
+[[menu.footer]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+#series = "series"
+
+[[menu.icon]]
+    url = "https://github.com/tkancf/"
+    name = "github"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://twitter.com/tkancf"
+    name = "twitter"
+    weight = 1

@@ -1,10 +1,12 @@
 ---
 title: "Vimの設定整理した(2020年版)"
 date: 2020-10-15T00:55:32+09:00
-tags: ["tech", "vim", "vimrc", "config"]
+tags: ["vim", "vimrc", "config"]
+categories: ["tech"]
 thumbnail: "images/tn.png??"
 description: "Vimの設定まとめ in 2020年"
 draft: false
+
 ---
 
 Vimの設定がごちゃごちゃしてきていたので、久々に vimrc 大掃除して使っていないプラグインを消したりキーマップを考え直したりしました。  

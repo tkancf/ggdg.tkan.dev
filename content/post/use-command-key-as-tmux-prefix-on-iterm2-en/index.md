@@ -1,7 +1,8 @@
 ---
 title: "Using the Command key as a prefix key for tmux in Iterm2"
 date: 2020-05-11T04:50:09+09:00
-tags: ["tech", "tmux", "Iterm2", "Mac", "config"]
+tags: ["tmux", "iterm2", "mac", "config"]
+categories: ["tech"]
 thumbnail: "images/tn.png??"
 description: "How to use the Command key as a prefix key for tmux."
 draft: false
