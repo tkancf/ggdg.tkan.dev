@@ -244,3 +244,9 @@ Vim から Twitter するためのプラグイン
 - [mattn/webapi-vim](https://github.com/mattn/webapi-vim)
 - [basyura/twibill.vim](https://github.com/basyura/twibill.vim)
 - [basyura/bitly.vim](https://github.com/basyura/bitly.vim)
+
+## 現状のvimrc
+
+{{< rawhtml >}}
+<script src="https://gist.github.com/tkancf/c27e20d75807647d2d298c8b76e23a64.js"></script>
+{{</ rawhtml >}}

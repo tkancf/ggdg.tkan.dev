@@ -11,7 +11,6 @@ draft: false
 
 - GitHub: https://github.com/tkancf
 - Twitter: https://twitter.com/tkancf
-- お絵描き: https://draw.tkan.dev/
 
 ## Who are you?
 
@@ -34,12 +33,12 @@ CLIツール周りが好きで、よくいじっています。好きなエデ�
 設定ファイルをいじり続けて早4年近くが経とうとしています。  
 小さいながらも自分でプラグインを作ってもいます。
 
-### ISUCON
-
-2019年に初参加し、手も足も出ませんでした。  
-2020年も参加します。
-
 ### にじさんじ
 
 今年に入ってドハマリしました。ほぼ毎日、友人とDiscordで通話しながらYouTubeでにじさんじの配信を観るなどしています。  
 [戌亥とこ](https://www.youtube.com/channel/UCXRlIK3Cw_TJIQC5kSJJQMg)ちゃん推しです。
+
+### お絵描き
+
+2020年9月頃からちまちま描き始めました。  
+絵を描くのが元々好きだった訳ではなく、学生時代以来に描いたのですが、思いのほか楽しくてしばらく続けています。
