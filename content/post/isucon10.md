@@ -1,7 +1,8 @@
 ---
 title: "ISUCON10予選に参加して敗北しました"
 date: 2020-09-17T17:11:43+09:00
-tags: ["ISUCON", "参加レポート"]
+tags: ["isucon", "参加レポート"]
+categories: ["tech"]
 thumbnail: "images/tn.png??"
 description: "ISUCON10予選に参加しましたが、太刀打ち出来ずに敗北しました。"
 draft: false

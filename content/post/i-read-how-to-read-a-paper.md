@@ -2,6 +2,7 @@
 title: "How to Read a Paperという論文を読んだ"
 date: 2020-06-03T04:30:30+09:00
 tags: ["読んだ", "論文"]
+categories: ["reading"]
 thumbnail: "images/tn.png??"
 description: "論文を読む方法を解説している論文を読んだメモ"
 draft: false

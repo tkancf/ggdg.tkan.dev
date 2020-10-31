@@ -1,12 +1,12 @@
-+++
-draft = false
-date = 2019-11-05T20:25:42+09:00
-title = "VimConf2019に行ってきました"
-tags = ["vim", "vimconf", "参加レポート"]
-thumbnail = "posts/vimconf2019/vimconf2019_icon.jpg"
-description = "VimConf2019に参加した感想"
-+++
-
+---
+title: "VimConf2019に行ってきました"
+date: 2019-11-05T20:25:42+09:00
+tags: ["vim", "vimconf", "参加レポート"]
+categories: ["tech"]
+thumbnail: "posts/vimconf2019/vimconf2019_icon.jpg"
+description: "VimConf2019に参加した感想"
+draft: false
+---
 
 ## はじめに
 
