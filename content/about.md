@@ -11,6 +11,7 @@ draft: false
 
 - GitHub: https://github.com/tkancf
 - Twitter: https://twitter.com/tkancf
+- お絵描き置き場: https://scrapbox.io/draw-tkancf
 
 ## Who are you?
 
@@ -40,5 +41,5 @@ CLIツール周りが好きで、よくいじっています。好きなエデ�
 
 ### お絵描き
 
-2020年9月頃からちまちま描き始めました。  
+2020年8月頃からちまちま描き始めました。  
 絵を描くのが元々好きだった訳ではなく、学生時代以来に描いたのですが、思いのほか楽しくてしばらく続けています。
