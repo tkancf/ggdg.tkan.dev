@@ -12,10 +12,10 @@ googleAnalytics = "UA-89403151-6"
     author = "tkancf"
     badge = "black"
     quote = "gray"
-    portrait = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
+    portrait = "images/avatar2020.jpg" # Contain the path of the optionnal avatar in the static folder.
     index_posts_num = 7
     google_search = true
-    logo = "images/avatar.jpg"
+    logo = "images/avatar2020.jpg"
     description = "tkan's personal blog"
     bio = """
     <br />
