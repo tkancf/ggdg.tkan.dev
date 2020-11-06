@@ -4,7 +4,7 @@ help: ## Display this help messages
 
 .PHONY: newPost
 newPost: ## Create new Post. Plz SET title as args. like (`make newPost hogehoge`)
-	@hugo new content/posts/$(filter-out $@,$(MAKECMDGOALS)).md
+	@hugo new content/post/$(filter-out $@,$(MAKECMDGOALS)).md
 
 .PHONY: server
 server: ## Start preview server

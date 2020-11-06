@@ -6,7 +6,7 @@ languageCode = "ja"
 DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-googleAnalytics = "UA-89403151-6"
+#googleAnalytics = "UA-89403151-6"
 
 [params]
     author = "tkancf"

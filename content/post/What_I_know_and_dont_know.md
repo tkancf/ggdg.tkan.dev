@@ -1,7 +1,7 @@
 ---
 title: "(技術的に)私が知っていること・知らないこと"
 date: 2020-07-24T02:44:01+09:00
-tags: ["振り返り"]
+tags: [poem]
 categories: ["tech"]
 thumbnail: "images/tn.png??"
 description: "現状の自分が技術的に知っていること、知らないことを列挙してみた"

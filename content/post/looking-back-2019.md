@@ -1,8 +1,8 @@
 ---
 title: "2019年を振り返る"
 date: 2019-12-13T02:16:07+09:00
-tags: ["振り返り"]
-categories: ["looking-back", "tech"]
+tags: [looking-back]
+categories: [2019年, tech]
 thumbnail: "images/tn.png"
 description: "2019年の個人的な出来事を振り返った"
 draft: false

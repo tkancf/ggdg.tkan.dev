@@ -1,7 +1,7 @@
 ---
 title: "Gitでマルチバイト文字列がエスケープされる対策"
 date: 2020-10-25T20:37:39+09:00
-tags: ["git", "config", "knowledge"]
+tags: [git, config]
 categories: ["tech"]
 thumbnail: "images/tn.png??"
 description: "デフォルトだとGitでマルチバイト文字列がエスケープされるのでその対策"
