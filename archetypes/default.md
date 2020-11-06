@@ -1,9 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-tags: [""]
-categories: [""]
-thumbnail: "images/tn.png??"
+categories: []
+tags: []
+thumbnail: "images/avatar2020.jpg"
 description: ""
 draft: true
 
