@@ -12,7 +12,7 @@ draft: false
 今年はコロナの影響で在宅勤務となったこともあり、部屋で過ごす時間が増えたため、身の回りのグッズを充実させたくなる一年でした。  
 色々買ったんですが、その中でもこれは良かったな〜ってやつをリストアップしておきます。
 
-## [ambie](https://ambie.co.jp/soundearcuffs/) (6,050円)
+## [イヤホン (ambie)](https://ambie.co.jp/soundearcuffs/) (6,050円)
 
 私の所属しているチームでは仕事柄、即時的なコミュニケーションを求められることが多いため、基本的に通話を繋いで仕事をしています。  
 しかし、そうなると一日8時間イヤホンをして過ごすことになり、耳が痛くなってきました。
@@ -29,7 +29,7 @@ draft: false
 私が趣味で絵を描く程度ではWacomの10万するやつと違いが分からないです。  
 モニタアームに取り付けて、普段はデュアルディスプレイとして利用しています。
 
-## [CLIP STUDIO PAINT PRO](https://www.clipstudio.net/) (2,800円/1年)
+## [お絵描きソフト (CLIP STUDIO PAINT PRO)](https://www.clipstudio.net/) (2,800円/1年)
 
 お絵描きは楽しいので！
 
@@ -38,7 +38,7 @@ draft: false
 今年から趣味もあって、一日の大半をYouTubeみながら過ごしています。  
 広告があると作業用BGMにするにも煩わしいので、月額1,180円ぐらいは払うと良いとされています。
 
-## [REALFORCE TKL SA / R2TLSA-JP4-BK](https://www.pfu.fujitsu.com/direct/realforce/detail_pz-r2tlsa-jp4-bk.html) (31,350円)
+## [キーボード (REALFORCE TKL SA / R2TLSA-JP4-BK)](https://www.pfu.fujitsu.com/direct/realforce/detail_pz-r2tlsa-jp4-bk.html) (31,350円)
 
 なんか手が滑りました。  
 最近はJS配列のキーボードをUS配列として認識させて、余ったキーをショートカット用に割り当てるという使い方をしています。
