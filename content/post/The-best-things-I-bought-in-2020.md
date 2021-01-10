@@ -5,7 +5,7 @@ categories: [looking-back]
 tags: [生活, 2020年, 買い物, グッズ, ガジェット]
 thumbnail: "images/avatar2020.jpg"
 description: "2020年に課金して、これは良かったな〜ってやつ一覧です。"
-draft: false
+draft: true
 
 ---
 
