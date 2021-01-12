@@ -9,21 +9,32 @@ footnoteReturnLinkContents = "^"
 googleAnalytics = "UA-89403151-6"
 
 [params]
-    author = "tkancf"
+    author = "Tkan"
     badge = "black"
     quote = "gray"
     portrait = "images/avatar2020.jpg" # Contain the path of the optionnal avatar in the static folder.
     index_posts_num = 7
     google_search = true
     logo = "images/avatar2020.jpg"
-    description = "tkan's personal blog"
+    description = "Tkan's blog"
     bio = """
-    <br />
-    <p>Vimが好きなインフラエンジニアです。 最近はVtuberとお絵描きを趣味としています。</p>
-    <br />
-    <p>このブログには技術系の知見と日記を書いています。</p>
+    <div>
+      Vimが好きなインフラエンジニアです。
+      VTuberとお絵描きを趣味としています。
+    </div>
+    <br>
+    <div>
+       - <a href="https://github.com/tkancf">GitHub: https://github.com/tkancf</a>
+    </div>
+    <div>
+       - <a href="https://twitter.com/tkancf">Twitter: https://twitter.com/tkancf</a>
+    </div>
+    <div>
+       - <a href="https://www.pixiv.net/users/27444108">Pixiv: https://www.pixiv.net/users/27444108</a>
+    </div>
+
     """
-    copyright = "Copyright © 2019-2020, tkancf all rights reserved."
+    copyright = "Copyright © 2019-2020, Tkan all rights reserved."
     favicon = "images/favicon-16x16.png"
 
 [[menu.main]]
@@ -35,14 +46,3 @@ googleAnalytics = "UA-89403151-6"
 [taxonomies]
     category = "categories"
     tag = "tags"
-#series = "series"
-
-[[menu.icon]]
-    url = "https://github.com/tkancf/"
-    name = "github"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://twitter.com/tkancf"
-    name = "twitter"
-    weight = 1
