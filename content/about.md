@@ -11,7 +11,7 @@ draft: false
 
 - GitHub: https://github.com/tkancf
 - Twitter: https://twitter.com/tkancf
-- お絵描き置き場: https://scrapbox.io/draw-tkancf
+- Pixiv: https://www.pixiv.net/users/27444108
 
 ## Who are you?
 
