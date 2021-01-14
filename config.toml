@@ -19,18 +19,21 @@ googleAnalytics = "UA-89403151-6"
     description = "Tkan's blog"
     bio = """
     <div>
-      Vimが好きなインフラエンジニアです。
-      VTuberとお絵描きを趣味としています。
+      Vimが好きなインフラエンジニアのブログです。
     </div>
     <br>
     <div>
-       - <a href="https://github.com/tkancf">GitHub: https://github.com/tkancf</a>
-    </div>
-    <div>
-       - <a href="https://twitter.com/tkancf">Twitter: https://twitter.com/tkancf</a>
-    </div>
-    <div>
-       - <a href="https://www.pixiv.net/users/27444108">Pixiv: https://www.pixiv.net/users/27444108</a>
+    <ul>
+       <li>
+         - <a href="https://github.com/tkancf">GitHub: https://github.com/tkancf</a>
+       </li>
+       <li>
+         - <a href="https://twitter.com/tkancf">Twitter: https://twitter.com/tkancf</a>
+       </li>
+       <li>
+         - <a href="https://www.pixiv.net/users/27444108">Pixiv: https://www.pixiv.net/users/27444108</a>
+       </li>
+    </ul>
     </div>
 
     """
