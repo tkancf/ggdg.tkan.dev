@@ -5,7 +5,7 @@ categories: [tech]
 tags: [Sapper, Svelte, GitHub Pages, GitHub Actions]
 thumbnail: "images/avatar2020.jpg"
 description: "Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開する手順"
-draft: true
+draft: false
 
 ---
 
@@ -42,7 +42,7 @@ npx: installed 1 in 1.19s
 ❯ cd sapper-gh-pages-gh-actions
 ```
 
-現在はTypeScriptがサポートされているので、せっかくですからTypeScriptを有効化しておきます。  
+現在はTypeScriptがサポートされているので、TypeScriptを有効化しておきます。  
 下記コマンドを実行するだけです。
 
 ```bash
@@ -123,3 +123,43 @@ index b5f1b96..3999295 100644
 
 上記を追加した後、再度 `npm run dev` を実行すると、 `localhost:3000/<repository name>` がアプリのURLになっているはずです。
 
+## GitHub Actionsの設定
+
+アプリは用意出来たのでGitHub Actionsを設定します。  
+`.github/workflows/deploy.yml` というファイルを作成して以下の内容を書きます。(`sapper-gh-pages-gh-actions` の部分は適宜自分のリポジトリ名に変更して下さい。)
+
+GitHub Actionsの [truewebartisans/actions-sapper](https://github.com/truewebartisans/actions-sapper)、
+[peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)を利用しています。  
+
+```yaml
+name: deploy
+on: push
+jobs:
+  build_deploy:
+    name: Build sapper app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Build Sapper
+        uses: truewebartisans/actions-sapper@master
+        with:
+          args: "--legacy --basepath sapper-gh-pages-gh-actions"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: __sapper__/export/sapper-gh-pages-gh-actions
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+## デプロイ
+
+GitHubへpushしたら、リポジトリのSettingsからGithub PagesのSourceを gh-pages ブランチの `/(root)`に設定します。
+
+ここまでの設定が問題なく完了していれば、 `https://<username>.github.io/<repository name>/` でアプリが確認出来るはずです。
+
+## あとがき
+
+今回GitHub Actionsを初めて使ったんですが、便利ですね。色々と使い道はあるようなので、調べつつもう少し試してみたいと思います。  
