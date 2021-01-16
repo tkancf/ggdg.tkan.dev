@@ -6,7 +6,7 @@ languageCode = "ja"
 DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-googleAnalytics = "UA-89403151-6"
+#googleAnalytics = "UA-89403151-6"
 
 [params]
     author = "Tkan"
@@ -17,26 +17,6 @@ googleAnalytics = "UA-89403151-6"
     google_search = true
     logo = "images/avatar2020.jpg"
     description = "Tkan's blog"
-    bio = """
-    <div>
-      Vimが好きなインフラエンジニアのブログです。
-    </div>
-    <br>
-    <div>
-    <ul>
-       <li>
-         - <a href="https://github.com/tkancf">GitHub: https://github.com/tkancf</a>
-       </li>
-       <li>
-         - <a href="https://twitter.com/tkancf">Twitter: https://twitter.com/tkancf</a>
-       </li>
-       <li>
-         - <a href="https://www.pixiv.net/users/27444108">Pixiv: https://www.pixiv.net/users/27444108</a>
-       </li>
-    </ul>
-    </div>
-
-    """
     copyright = "Copyright © 2019-2020, Tkan all rights reserved."
     favicon = "images/favicon-16x16.png"
 
