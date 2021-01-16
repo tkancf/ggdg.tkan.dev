@@ -6,7 +6,7 @@ languageCode = "ja"
 DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-#googleAnalytics = "UA-89403151-6"
+googleAnalytics = "UA-89403151-6"
 
 [params]
     author = "Tkan"
@@ -18,7 +18,7 @@ footnoteReturnLinkContents = "^"
     logo = "images/avatar2020.jpg"
     description = "Tkan's blog"
     copyright = "Copyright © 2019-2020, Tkan all rights reserved."
-    favicon = "images/favicon-16x16.png"
+    favicon = "images/favicon-16x16.jpg"
 
 [[menu.main]]
     identifier = "about"
