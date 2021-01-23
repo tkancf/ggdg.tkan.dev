@@ -1,6 +1,3 @@
-[submodule "themes/erblog"]
-	path = themes/erblog
-	url = https://github.com/tkancf/erblog
 [submodule "themes/ggdgtheme"]
 	path = themes/ggdgtheme
 	url = https://github.com/tkancf/ggdgtheme
