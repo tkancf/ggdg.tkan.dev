@@ -13,9 +13,8 @@ draft: false
 - Twitter: https://twitter.com/tkancf
 - Pixiv: https://www.pixiv.net/users/27444108
 
-## Who are you?
+## Who am I
 
-「てぃーかん」です。  
 新宿の某社でインフラエンジニアとして働いています。  
 CLIツール周りが好きで、よくいじっています。好きなエディタはVimです。  
 最近は文字コード技術・言語処理系に興味を持っていて、趣味でインタプリタを作ろうとしています。  

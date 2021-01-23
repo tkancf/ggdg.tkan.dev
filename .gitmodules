@@ -1,3 +1,6 @@
 [submodule "themes/ggdgtheme"]
 	path = themes/ggdgtheme
 	url = https://github.com/tkancf/ggdgtheme
+[submodule "themes/ggdg"]
+	path = themes/ggdg
+	url = https://github.com/tkancf/ggdg
