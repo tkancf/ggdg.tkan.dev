@@ -32,7 +32,7 @@ console.log(t.textContent);
 
 onMountライフサイクルを使って、以下のように書けばOK ([REPLでの動作確認](https://svelte.dev/repl/6ae127160841452285c1e9386ff649cf?version=3.31.2))
 
-```svelte
+```html
 <script>
     import { onMount } from 'svelte';
     onMount(() => {

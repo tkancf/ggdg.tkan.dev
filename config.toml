@@ -1,30 +1,15 @@
 baseURL = "https://ggdg.tkan.dev/"
 title = "ggdG:wq!"
-theme = "erblog"
-paginate = 3
+theme = "ggdg"
 languageCode = "ja"
 DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
-footnoteReturnLinkContents = "^"
 googleAnalytics = "UA-89403151-6"
 
 [params]
     author = "Tkan"
-    badge = "black"
-    quote = "gray"
-    portrait = "images/avatar2020.jpg" # Contain the path of the optionnal avatar in the static folder.
-    index_posts_num = 7
     google_search = true
-    logo = "images/avatar2020.jpg"
     description = "Tkan's blog"
-    copyright = "Copyright © 2019-2020, Tkan all rights reserved."
-    favicon = "images/favicon-16x16.jpg"
-
-[[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 10
 
 [taxonomies]
     category = "categories"
