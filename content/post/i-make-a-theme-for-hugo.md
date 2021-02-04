@@ -1,10 +1,10 @@
 ---
-title: "Hugoのテーマを自作しました"
+title: "Hugoのテーマを自作したので、知見メモ"
 date: 2021-01-31T22:12:56+09:00
 categories: [tech]
 tags: [Hugo, theme, blog]
 thumbnail: "images/avatar2020.jpg"
-description: "Hugoのテーマを自作したので、知見をメモ"
+description: "Hugoのテーマを自作したので、知見メモ"
 draft: false
 
 ---
@@ -15,7 +15,7 @@ Hugoのテーマは色々OSSのものがあるんですが、自分好みに自�
 そのときに得た知見のメモです。  
 [作ったテーマは公開してます](https://github.com/tkancf/ggdg)が、現状自分のブログ用にハードコードしちゃってる部分があります。
 
-## 知見
+## Tips
 
 ### テーマ自作のはじめ方
 
