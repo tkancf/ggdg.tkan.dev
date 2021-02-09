@@ -5,7 +5,7 @@ categories: [hobby]
 tags: [お絵描き, 日記]
 thumbnail: "images/avatar2020.jpg"
 description: "趣味でお絵描きをはじめたよって日記"
-draft: false
+draft: true
 
 ---
 
@@ -15,7 +15,7 @@ draft: false
 
 ここ3ヶ月ぐらいで描いた同じキャラを並べると、成長が感じられます。
 
-- [2020/10月頃に描いたルナ様](https://www.pixiv.net/artworks/86970907)
-- [2021/01/11に描いたルナ様](https://www.pixiv.net/artworks/86970948)
+- [2020/10月頃に描いた](https://www.pixiv.net/artworks/86970907)
+- [2021/01/11に描いた](https://www.pixiv.net/artworks/86970948)
 
 お金がかからなくてコスパも良い趣味なので、ちまちま続けられたらいいなと思います。
