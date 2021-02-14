@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mac on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/mac/</link><description>Recent content in mac on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 11 May 2020 04:50:09 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Commandキーをtmuxのプレフィックスキーとして使う on Iterm2</title><link>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2/</link><pubDate>Mon, 11 May 2020 04:50:09 +0900</pubDate><guid>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2/</guid><description>tmuxのプレフィックスキーに最適なキーを探して数年が経ちました。
+Vimのキーマップやターミナルのショートカットを考慮するとプレフィックスキーとして使える組み合わせってほぼ残って無いです。
+(デフォルトのCtrl+aとか、shellでめっちゃ多用します)
+なので色々な組み合わせを試してきたんですが、最近MacだったらCommandキーをプレフィックスキーとして使えば良いのでは？
+と考えて設定してみたら結構いい感じです。
+Commandキーをプレフィックスキーとして使うメリットとしては
+押しやすい位置にある ターミナルで動くツール(vim, bash, 他CLIツール類)とショートカットでバッティングすることが無い(多分) とかが挙がります。
+親指で押せる位置にあるというのは、ターミナルで生活する者としては結構重要です。
+小指とかで押すCtrl等をプレフィックスキーとして使用すると小指が死んでしまいます。
+Commandキー単押しでプレフィックスキーとして動作させることも可能ですし、 Commandキー + ' を tmuxのpane分割キーとして設定すること等も可能です。 (これも結構メリット)
+前提 下記環境で動作確認を行っています。 macOS Catalina バージョン 10.15.5 iTerm2 Build 3.3.11 tmux 3.0a 設定方法 Iterm2にはキーボードショートカットを自分で登録する機能が最初からついてます。
+ショートカットを入力した際に色々なアクション(スクロールとかコピー等)を実行できるのですが、そんなアクションの中に &amp;ldquo;Send Hex Code&amp;rdquo; というアクションがあります。その名の通りショートカットを入力した際にASCIIコードを送信してくれる機能です。
+こいつを利用して、Commandキーを入力した際にtmuxのプレフィックスキーとして設定したキーのASCIIコードを送信してもらいます。
+どのキーがASCIIコードの16進数で何に該当するのかは下記サイトとかみると分かります。
+ＡＳＣＩＩコード表: https://ja.wikipedia.org/wiki/ASCII
+tmux側の設定 実はtmuxのprefix設定が何でも良いわけじゃないです。(ここが若干デメリット)
+tmux的には Ctrl-&amp;lt;Space&amp;gt; をプレフィックスキーとして使うことが出来るのですが、
+上記 &amp;ldquo;send Hex Code&amp;rdquo; の機能としては上記ASCIIコード表に載っているような文字もしくは制御文字しか対応していません。
+なので普段使わなさそうな制御文字をプレフィックスキーとして利用します。
+ASCIIコードの制御文字とその説明はWikipediaみると概要は分かるかと思います。
+Wikipedia 制御文字: https://ja.wikipedia.org/wiki/%E5%88%B6%E5%BE%A1%E6%96%87%E5%AD%97
+私は Ctrl + \ をtmuxのプレフィックスキーとして設定しました。 (制御文字としては File Separator だそうです。)</description></item><item><title>Using the Command key as a prefix key for tmux in Iterm2</title><link>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2-en/</link><pubDate>Mon, 11 May 2020 04:50:09 +0900</pubDate><guid>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2-en/</guid><description>I&amp;rsquo;ve been looking for the best key for a tmux prefix key for several years now.
+Considering Vim&amp;rsquo;s keymap and terminal shortcuts, it&amp;rsquo;s a prefix key. There are almost no usable combinations left.
+(Ctrl+a, which is set as the default prefix key on tmux, is used for bash It&amp;rsquo;s covered with a shell.)
+So I&amp;rsquo;ve been experimenting with various combinations, and recently, if I were on a Mac, I&amp;rsquo;d use the Command key.</description></item></channel></rss>

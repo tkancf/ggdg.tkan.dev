@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/hugo/</link><description>Recent content in Hugo on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 31 Jan 2021 22:12:56 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoのテーマを自作したので、知見メモ</title><link>https://ggdg.tkan.dev/post/i-make-a-theme-for-hugo/</link><pubDate>Sun, 31 Jan 2021 22:12:56 +0900</pubDate><guid>https://ggdg.tkan.dev/post/i-make-a-theme-for-hugo/</guid><description>概要 Hugoのテーマは色々OSSのものがあるんですが、自分好みに自由できるテーマが欲しくなったので自作してみました。 そのときに得た知見のメモです。
+作ったテーマは公開してますが、現状自分のブログ用にハードコードしちゃってる部分があります。
+Tips テーマ自作のはじめ方 hugoBasicExample というサンプル記事を予め用意してくれてるリポジトリがあるので、 このリポジトリをcloneして、hugo new theme &amp;lt;テーマ名&amp;gt; で見た目を確認しながら作ることが出来ます。
+ただ、このリポジトリは記事が全て英語なので、日本語の記事を自分で用意して、日本語フォントの様子を見たほうが良いです。
+Hugoのテンプレートで使える変数 基本的に公式ドキュメントを参考にします。例も充実しているので困ることはあまりないです。
+Hugo Themes から、やりたいことを実現しているテーマを見つけて、そのソースを参考にするのも良いです。
+シンタックスハイライト 以前はhighlight.jsを導入するなどしてシンタックスハイライトしていたのですが、
+現在のHugoではChromaを利用してデフォルトでシンタックスハイライトが可能になっています。 (v0.28以降)
+サポートされている言語も割と多いです。
+大したサイズではないですが、highlight.jsを読み込まなければそのぶん軽くなるので、言語のサポート率に不満がなければデフォルトのシンタックスハイライトに任せても良いと思います。
+その他 最後に参考リンク貼っておくので、リンク先を見るのが良いです。
+特にHugoのテーマを何個か作ったので知見をまとめてみるはめちゃくちゃ参考にさせて頂きました。
+参考Link 主に下記ページを参考にさせてもらいました。
+Hugo Documentation Hugoのテーマを何個か作ったので知見をまとめてみる github.com/gohugoio/hugoBasicExample</description></item><item><title>Hugo で生HTMLを書く方法</title><link>https://ggdg.tkan.dev/post/using-html-in-hugo/</link><pubDate>Thu, 16 Jan 2020 19:15:30 +0900</pubDate><guid>https://ggdg.tkan.dev/post/using-html-in-hugo/</guid><description>Hugoの記事内でTwitterの埋め込みなどをしたくなったとき、生のHTMLを使ってほしい時があったので対応方法を調べて導入した。
+参考: 【HUGO】マークダウンの中にHTMLコードを書いて表示する方法
+HugoのThemeに {{ .Innner }} というショートコードを導入する必要があるらしい。
+利用しているThemeをcloneして &amp;ldquo;layouts&amp;rdquo; フォルダ内に &amp;ldquo;rawhtml.html&amp;rdquo; というファイルを作成。
+ファイルに {{ .Inner }} とだけ記載すると↓のように書くことで生HTMLが記事内で使えるようになった 🎉🎉
+{{&amp;lt; rawhtml &amp;gt;}} &amp;lt;a href=&amp;quot;/posts&amp;quot;&amp;gt;ほげほげ&amp;lt;/a&amp;gt; {{&amp;lt; /rawhtml &amp;gt;}} 試しに去年最後の散財の様子を貼ってみる
+（多分）今年最後の散財が届いた pic.twitter.com/VtUgo4H3ia
+&amp;mdash; tkan (@tkancf) December 21, 2019 いい感じだ</description></item></channel></rss>

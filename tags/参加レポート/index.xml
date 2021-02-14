@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>参加レポート on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/%E5%8F%82%E5%8A%A0%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88/</link><description>Recent content in 参加レポート on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 17 Sep 2020 17:11:43 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/%E5%8F%82%E5%8A%A0%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88/index.xml" rel="self" type="application/rss+xml"/><item><title>ISUCON10予選に参加して敗北しました</title><link>https://ggdg.tkan.dev/post/isucon10/</link><pubDate>Thu, 17 Sep 2020 17:11:43 +0900</pubDate><guid>https://ggdg.tkan.dev/post/isucon10/</guid><description>@Rasino66 と2人で ISUCON10 の予選に参加してきました。
+残念ながら本戦に出場は出来ませんでしたが、学びが多い面白い問題でした。
+Discordで通話しつつ画面を共有してやり取りしていましたが、これは普段から同じ手法で2人オンライン読書会してたりするので、
+特に困ることもなかったです。 コードの編集等は難しいことを考えずに直接サーバへSSHした上で、Vimで編集していました。
+言語はGoを選択しました。
+前半 最序盤はベンチマークが回せなかったので、事前に準備していた通りに以下を行いました。
+ここまでは練習通りに出来ていて良かったです。
+サーバに必要なものを入れる pt-query-digest kataribe Vimの設定等 MySQL, Nginxのログ周りを出力するように設定する マニュアルを読む 上記準備が終わった頃にはベンチマークが回せるようになっていたので、とりあえず初回のベンチマークを実行し、
+MySQLのCPU使用率が支配的であることを確認しました。
+pt-query-digestの結果から
+以下にインデックスを追加し、スコアが少し延びたことを確認しましたが、依然としてMySQLのCPU使用率が高いことを確認したため、ダメそうな箇所を改善し始めました。
+estateテーブル door_width door_height popularity rent chairテーブル price stock popularity どうも以下のようなクエリが実行されたときにインデックスを使えておらず、
+詳しく見てみると popularity を DESC で ORDER BY, その後 id を ASCで ORDER BYしているのが駄目なようです。
+mysql&amp;gt; explain SELECT * FROM estate WHERE rent &amp;gt;= 100000 AND rent &amp;lt; 150000 ORDER BY popularity DESC, id ASC LIMIT 25; +----+-------------+--------+------------+------+---------------+------+---------+------+-------+----------+-----------------------------+ | id | select_type | table | partitions | type | possible_keys | key | key_len | ref | rows | filtered | Extra | +----+-------------+--------+------------+------+---------------+------+---------+------+-------+----------+-----------------------------+ | 1 | SIMPLE | estate | NULL | ALL | idx_rent | NULL | NULL | NULL | 29533 | 30.</description></item><item><title>VimConf2019に行ってきました</title><link>https://ggdg.tkan.dev/post/vimconf2019/vimconf2019-report/</link><pubDate>Tue, 05 Nov 2019 20:25:42 +0900</pubDate><guid>https://ggdg.tkan.dev/post/vimconf2019/vimconf2019-report/</guid><description>はじめに VimConf2019に行ってきました。
+毎年同じことを言ってますが、今年も最高of最高でした。
+運営スタッフ、登壇者の方々、参加者の皆様本当にありがとうございました。
+セッションの内容 どのトーク内容も最高だったのですが、個人的にグッと来たものについて書きます。
+Keynote - Vim Renaissance vim-lspの作者であるPrabir Shrestha(@prabirshrestha)さんのトークです。
+普段から vim-lsp, asyncomplete.vim, async.vim とprabirshrestha wareでVim活していると言っても過言では無いので、
+楽しみにしていたトークでもありました。
+VimとNeovim の両方を対応する理由を質問された時に、 「選択の自由があるのは良いことだしみんなに使ってほしいから」的なことをおっしゃっていたのが印象的でした。
+Your Vim is Only for You VimConfの司会でもある@moppさんのトークです。
+vimrcをどう育てていくかという話だったのですが、 自分のvimrcを見返してみると、ポータビリティが微妙な部分や
+自分でも何故設定しているのかよく分かっていない部分が幾つかあったので、この機会にvimrcの整理をしなきゃだなと考えながら聞いていました。
+「大きくなったvimrcの機能を抽出してVim Pluginを作る」 と聞いてなるほど〜となりました。
+Grown up from Vim User to Vim plugin developer side Japanese IKさん(@get_me_power)のトークです。
+OSSを使う側から、開発に協力していく側に成長してくという話でした。
+発表がとても上手く、引き込まれました。
+私は普段PR投げたり、Issue報告したりなどほとんどせず、ユーザ側としての立場で居続けているので、やっていくべきですね。
+やっていきます。
+LT含め他にも素敵な発表だらけでした。
+YouTubeにも動画がアップロードされるはずなので、参加していない方はそちらを是非見てほしいです。
+懇親会 懇親会でもLTがあり、@rbtnn さんの Vim-TabSideBar が個人的にも使ってみたかったのでLT後に直接PCの画面を見せて頂きに行ったりしました。
+私はVimのTab機能を結構常用しているので、是非ともVim本体にmergeされて欲しい機能なのですが、
+Tab機能は海外だとあまり使われていないらしい (Bram氏がそう言っていたとのこと)です。
+@rbtnn さんのtabsidebarブランチをビルドすれば使えるので、使わせて頂こうと思ってます。
+LTでドラを鳴らしていた @aomoriringo さんには昨年のVimConf懇親会で何度かおかわりを頂いたブランデーのお礼しつつ、色々VimConfの運営についてお話伺ったりしました。
+スタッフの方々の働き無しには毎年こんなに最高のカンファレンスは開催出来ないと思います。
+毎度頭が下がる思いです。ありがとうございました。
+来年も是非参加したいです。</description></item></channel></rss>

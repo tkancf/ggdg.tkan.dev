@@ -1,0 +1,71 @@
+<html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/images/favicon-16x16.png><title>ggdG:wq! - Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開する</title><meta content="Sapper,Svelte,GitHub Pages,GitHub Actions,tech" name=keywords><meta content="ggdG:wq! - Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開する手順" name=description><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:site_name" content="ggdG:wq!"><meta property="og:title" content="ggdG:wq!"><meta property="og:description" content="Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開する手順"><meta property="og:type" content="website"><meta property="og:url" content="https://ggdg.tkan.dev/post/build-your-sapper-app-with-github-actions-and-publish-it-on-github-pages/"><meta property="og:image" content="https://ggdg.tkan.dev/images/avatar2020.jpg"><meta name=twitter:card content="summary"><meta name=twitter:site content="https://ggdg.tkan.dev/post/build-your-sapper-app-with-github-actions-and-publish-it-on-github-pages/"><meta name=twitter:image content="https://ggdg.tkan.dev/images/avatar2020.jpg"><link rel=stylesheet href=/css/new.css type=text/css><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-89403151-6"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-89403151-6');</script></head><body><header><h1>Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開する</h1><nav><a href=https://ggdg.tkan.dev/>Home</a> /
+<a href=https://ggdg.tkan.dev//post>All Posts</a> /
+<a href=https://ggdg.tkan.dev//about>About</a></nav></header><div class=container><div id=content style=min-height:80%><h2 id=概要>概要</h2><p>Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開しようとした所、
+BaseURLの設定周りで思ったよりハマってしまったので、記事にしておきます。</p><ul><li><a href=https://github.com/tkancf/sapper-gh-pages-gh-actions>サンプルリポジトリ</a></li><li><a href=https://tkancf.github.io/sapper-gh-pages-gh-actions/>公開しているページ</a> (Sapperのデモアプリ)</li></ul><h2 id=実現したいこと>実現したいこと</h2><ul><li>アプリのexportはGitHub Actionsで実行する</li><li>Sapperで作ったアプリをGitHub Pagesで公開する<ul><li>公開先のURLは <code>https://&lt;username>.github.io/&lt;repository name>/</code> とする</li></ul></li></ul><h2 id=前提>前提</h2><ul><li>Sapper v0.28.10</li><li>node v14.13.0</li></ul><h2 id=手順>手順</h2><h2 id=アプリを作成>アプリを作成</h2><p>今回は<a href=https://sapper.svelte.dev/>公式ページ</a>に書いてあるテンプレートのアプリをデプロイしますので、
+まずはテンプレートアプリをnpxでとってきます。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ npx degit <span style=color:#e6db74>&#34;sveltejs/sapper-template#rollup&#34;</span> sapper-gh-pages-gh-actions
+npx: installed <span style=color:#ae81ff>1</span> in 1.19s
+&gt; cloned sveltejs/sapper-template#rollup to sapper-gh-pages-gh-actions
+❯ cd sapper-gh-pages-gh-actions
+</code></pre></div><p>現在はTypeScriptがサポートされているので、TypeScriptを有効化しておきます。<br>下記コマンドを実行するだけです。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ node scripts/setupTypeScript.js
+Adding TypeScript with Rollup...
+Converted to TypeScript.
+</code></pre></div><p><code>npm install</code> を実行後、 <code>npm run dev</code> を実行して、動作確認してみます。<br>localhost:3000 をブラウザから開くと、ナイスガイが決めポーズをしている画像が表示されるはずです。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ npm install
+.
+.
+</code></pre></div><p>※<code>npm install</code>長いので割愛してます。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ npm run dev
+
+&gt; TODO@0.0.1 dev /Users/tkancf/src/github.com/tkancf/sapper-gh-pages-gh-actions
+&gt; sapper dev
+
+✔ server <span style=color:#f92672>(</span>2.7s<span style=color:#f92672>)</span>
+✔ client <span style=color:#f92672>(</span>2.7s<span style=color:#f92672>)</span>
+&gt; Listening on http://localhost:3000
+✔ service worker <span style=color:#f92672>(</span>576ms<span style=color:#f92672>)</span>
+</code></pre></div><p>ここまでは <a href=https://sapper.svelte.dev/docs#Getting_started>公式ページのGetting started</a> にも書いてある内容なので、
+問題ないはずです。</p><h2 id=baseurl-の変更>BaseURL の変更</h2><p>公開したいページのURLが<br><code>https://&lt;username>.github.io/&lt;repository name>/</code> となります。<br>末尾にサブディレクトリの形でリポジトリ名が入っており、今のアプリのままでは画像等が表示されません。</p><p>まずはアプリをこのURL形式に対応させます。変更箇所は以下の2箇所です。<br>Gitのdiffを貼っておきます。各々のリポジトリ名に合わせて読み替えて下さい。</p><h3 id=srcserverts><code>src/server.ts</code></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff>diff --git a/src/server.ts b/src/server.ts
+index c77f593..085e55a 100644
+<span style=color:#f92672>--- a/src/server.ts
+</span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/src/server.ts
+</span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -8,6 +8,7 @@ const dev = NODE_ENV === &#39;development&#39;;
+</span><span style=color:#75715e></span>
+ polka() // You can also use Express
+        .use(
+<span style=color:#a6e22e>+               &#39;sapper-gh-pages-gh-actions&#39;,
+</span><span style=color:#a6e22e></span>                compression({ threshold: 0 }),
+                sirv(&#39;static&#39;, { dev }),
+                sapper.middleware()
+</code></pre></div><h3 id=rollupconfigjs><code>rollup.config.js</code></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff>diff --git a/rollup.config.js b/rollup.config.js
+index b5f1b96..3999295 100644
+<span style=color:#f92672>--- a/rollup.config.js
+</span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/rollup.config.js
+</span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -39,7 +39,7 @@ export default {
+</span><span style=color:#75715e></span>                        }),
+                        url({
+                                sourceDir: path.resolve(__dirname, &#39;src/node_modules/images&#39;),
+<span style=color:#f92672>-                               publicPath: &#39;/client/&#39;
+</span><span style=color:#f92672></span><span style=color:#a6e22e>+                               publicPath: &#39;/sapper-gh-pages-gh-actions/client/&#39;
+</span><span style=color:#a6e22e></span>                        }),
+                        resolve({
+                                browser: true,
+</code></pre></div><p>上記を追加した後、再度 <code>npm run dev</code> を実行すると、 <code>localhost:3000/&lt;repository name></code> がアプリのURLになっているはずです。</p><h2 id=github-actionsの設定>GitHub Actionsの設定</h2><p>アプリは用意出来たのでGitHub Actionsを設定します。<br><code>.github/workflows/deploy.yml</code> というファイルを作成して以下の内容を書きます。(<code>sapper-gh-pages-gh-actions</code> の部分は適宜自分のリポジトリ名に変更して下さい。)</p><p>GitHub Actionsの <a href=https://github.com/truewebartisans/actions-sapper>truewebartisans/actions-sapper</a>、
+<a href=https://github.com/peaceiris/actions-gh-pages>peaceiris/actions-gh-pages</a>を利用しています。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>name</span>: <span style=color:#ae81ff>deploy</span>
+<span style=color:#f92672>on</span>: <span style=color:#ae81ff>push</span>
+<span style=color:#f92672>jobs</span>:
+  <span style=color:#f92672>build_deploy</span>:
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build sapper app</span>
+    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+
+    <span style=color:#f92672>steps</span>:
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Checkout code</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@master</span>
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build Sapper</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>truewebartisans/actions-sapper@master</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>args</span>: <span style=color:#e6db74>&#34;--legacy --basepath sapper-gh-pages-gh-actions&#34;</span>
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy to GitHub Pages</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-gh-pages@v3</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>__sapper__/export/sapper-gh-pages-gh-actions</span>
+          <span style=color:#f92672>publish_branch</span>: <span style=color:#ae81ff>gh-pages</span>
+          <span style=color:#f92672>github_token</span>: <span style=color:#ae81ff>${{ secrets.GITHUB_TOKEN }}</span>
+</code></pre></div><h2 id=デプロイ>デプロイ</h2><p>GitHubへpushしたら、リポジトリのSettingsからGithub PagesのSourceを gh-pages ブランチの <code>/(root)</code>に設定します。</p><p>ここまでの設定が問題なく完了していれば、 <code>https://&lt;username>.github.io/&lt;repository name>/</code> でアプリが確認出来るはずです。</p><h2 id=あとがき>あとがき</h2><p>今回GitHub Actionsを初めて使ったんですが、便利ですね。色々と使い道はあるようなので、調べつつもう少し試してみたいと思います。</p></div></div></body></html>

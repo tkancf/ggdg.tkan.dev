@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vim on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/vim/</link><description>Recent content in vim on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 15 Oct 2020 00:55:32 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Vimの設定整理した(2020年版)</title><link>https://ggdg.tkan.dev/post/vim-settings-in-2020/</link><pubDate>Thu, 15 Oct 2020 00:55:32 +0900</pubDate><guid>https://ggdg.tkan.dev/post/vim-settings-in-2020/</guid><description>Vimの設定がごちゃごちゃしてきていたので、久々に vimrc 大掃除して使っていないプラグインを消したりキーマップを考え直したりしました。
+プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておきます。
+私の今のvimrc
+整理する上で意識したこと features=huge でコンパイルされた Vim8(&amp;gt;=8.0.1453) で動作すること Neovim のことは考えない Windows での動作は考えない 基本的に .vimrc 1ファイルを管理する features=huge でコンパイルされた Vim8(&amp;gt;=8.0.1453) で動作すること 私が開発したくなるような環境では Vim8(&amp;gt;=8.0.1453) が入っているか、容易にインストール可能なはずなので、 Vim7 以下については考慮しないようにしました。
+features=huge だけだと、 +python3, +lua が入りませんが、有効化されているか確認して必要があれば有効化する等の作業が個人的に煩わしいため、切り捨てました。
+Neovim のことは考えない 私はNeovimを使用していないので、そもそも検討していません。
+たまに情報を追ってはいるのですが、現状「どうしても Neovim でないと駄目！」って機能が個人的には無いので乗り換える予定もないです。
+Windows での動作は考えない 現在、家にも職場にも Windows 環境が無いので、検討しないことにしました。
+WSL2 もあるので。
+基本的に .vimrc 1ファイルを管理する 1ファイルに全部の設定を書き、プラグインのロード、プラグインの設定等のカテゴリごとに fold しています。
+キーマップの割り当て 下手なマッピングをするとデフォルトの設定を上書きしてしまったり、覚えられないキーマップを設定してしまったりするため、ある程度規則性を持たせることにしました。
+&amp;lt;Leader&amp;gt; キーはデフォルトの \ をそのまま使用し、プラグインのショートカット等に使用するキーとして以下の5キーを利用します。
+&amp;lt;Leader&amp;gt; キー (\ キー) プラグイン用のキー。デフォルトでは何も割り当てられていないので自由に使える。
+他のキーに変えたりはせず、そのまま \ をプレフィックスキーとして使用します。
+&amp;lt;Enter&amp;gt; キー デフォルトだと &amp;ldquo;カーソルを N 行下の先頭の CHAR へ移動するキー。&amp;quot;(Nj&amp;lt;C-^&amp;gt;と同等のハズ)</description></item><item><title>VimConf2019に行ってきました</title><link>https://ggdg.tkan.dev/post/vimconf2019/vimconf2019-report/</link><pubDate>Tue, 05 Nov 2019 20:25:42 +0900</pubDate><guid>https://ggdg.tkan.dev/post/vimconf2019/vimconf2019-report/</guid><description>はじめに VimConf2019に行ってきました。
+毎年同じことを言ってますが、今年も最高of最高でした。
+運営スタッフ、登壇者の方々、参加者の皆様本当にありがとうございました。
+セッションの内容 どのトーク内容も最高だったのですが、個人的にグッと来たものについて書きます。
+Keynote - Vim Renaissance vim-lspの作者であるPrabir Shrestha(@prabirshrestha)さんのトークです。
+普段から vim-lsp, asyncomplete.vim, async.vim とprabirshrestha wareでVim活していると言っても過言では無いので、
+楽しみにしていたトークでもありました。
+VimとNeovim の両方を対応する理由を質問された時に、 「選択の自由があるのは良いことだしみんなに使ってほしいから」的なことをおっしゃっていたのが印象的でした。
+Your Vim is Only for You VimConfの司会でもある@moppさんのトークです。
+vimrcをどう育てていくかという話だったのですが、 自分のvimrcを見返してみると、ポータビリティが微妙な部分や
+自分でも何故設定しているのかよく分かっていない部分が幾つかあったので、この機会にvimrcの整理をしなきゃだなと考えながら聞いていました。
+「大きくなったvimrcの機能を抽出してVim Pluginを作る」 と聞いてなるほど〜となりました。
+Grown up from Vim User to Vim plugin developer side Japanese IKさん(@get_me_power)のトークです。
+OSSを使う側から、開発に協力していく側に成長してくという話でした。
+発表がとても上手く、引き込まれました。
+私は普段PR投げたり、Issue報告したりなどほとんどせず、ユーザ側としての立場で居続けているので、やっていくべきですね。
+やっていきます。
+LT含め他にも素敵な発表だらけでした。
+YouTubeにも動画がアップロードされるはずなので、参加していない方はそちらを是非見てほしいです。
+懇親会 懇親会でもLTがあり、@rbtnn さんの Vim-TabSideBar が個人的にも使ってみたかったのでLT後に直接PCの画面を見せて頂きに行ったりしました。
+私はVimのTab機能を結構常用しているので、是非ともVim本体にmergeされて欲しい機能なのですが、
+Tab機能は海外だとあまり使われていないらしい (Bram氏がそう言っていたとのこと)です。
+@rbtnn さんのtabsidebarブランチをビルドすれば使えるので、使わせて頂こうと思ってます。
+LTでドラを鳴らしていた @aomoriringo さんには昨年のVimConf懇親会で何度かおかわりを頂いたブランデーのお礼しつつ、色々VimConfの運営についてお話伺ったりしました。
+スタッフの方々の働き無しには毎年こんなに最高のカンファレンスは開催出来ないと思います。
+毎度頭が下がる思いです。ありがとうございました。
+来年も是非参加したいです。</description></item></channel></rss>

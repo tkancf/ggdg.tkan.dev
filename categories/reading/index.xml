@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>reading on ggdG:wq!</title><link>https://ggdg.tkan.dev/categories/reading/</link><description>Recent content in reading on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 03 Jun 2020 04:30:30 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/categories/reading/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Read a Paperという論文を読んだ</title><link>https://ggdg.tkan.dev/post/i-read-how-to-read-a-paper/</link><pubDate>Wed, 03 Jun 2020 04:30:30 +0900</pubDate><guid>https://ggdg.tkan.dev/post/i-read-how-to-read-a-paper/</guid><description>論文を読む方法を解説している論文(?) 手引き書的な短めのPDF文書
+私は普段から論文を読むわけではないが、手法は論文を読む以外でも役に立ちそうな内容だったのでメモしておく
+論文タイトル How to Read a Paper
+Link https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf
+ざっくりまとめると 研究者は論文を読むことに多くの時間を費やすが、その方法を教えてもらうことはほとんど無く、無駄な努力をしがちなので効率な方法として &amp;ldquo;three-pass method&amp;rdquo; を紹介している
+&amp;ldquo;three-pass method&amp;rdquo; は
+Title, Abstract, Introduction, Section headings, Conclusions を読む 校正などは無視して要点をメモしたりコメント書き込みながら読む。この時、Referencesに未読の論文があればチェックしておく 論文の手法を再現してみる という3周に分けて段々と詳細に読んでいく手法
+著者/所属機関 S. Keshav
+David R. Cheriton School of Computer Science, University of Waterloo Waterloo, ON, Canada
+keshav@uwaterloo.ca
+コメント ここまでの記載方式は arXivTimes という機械学習関連の論文を調査・共有しているリポジトリの投稿方法を参考にさせてもらった
+あと本題からは外れるが、今回この論文読む上で なぞり翻訳(英→和) for DeepL翻訳 というChrome拡張が便利だった
+PDFから文をコピーすると変な所で改行されてしまい、DeepL翻訳に突っ込んだ時に文の意味が変わってしまうのだが、この拡張を使うと文の改行をすべて無くしてくれるので翻訳がかなりまともになる
+私みたいな英語を読むのに時間がかかる人類からするとDeepL翻訳は本当に神</description></item></channel></rss>

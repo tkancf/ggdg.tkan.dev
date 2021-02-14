@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tech on ggdG:wq!</title><link>https://ggdg.tkan.dev/categories/tech/</link><description>Recent content in tech on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 31 Jan 2021 22:12:56 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoのテーマを自作したので、知見メモ</title><link>https://ggdg.tkan.dev/post/i-make-a-theme-for-hugo/</link><pubDate>Sun, 31 Jan 2021 22:12:56 +0900</pubDate><guid>https://ggdg.tkan.dev/post/i-make-a-theme-for-hugo/</guid><description>概要 Hugoのテーマは色々OSSのものがあるんですが、自分好みに自由できるテーマが欲しくなったので自作してみました。 そのときに得た知見のメモです。
+作ったテーマは公開してますが、現状自分のブログ用にハードコードしちゃってる部分があります。
+Tips テーマ自作のはじめ方 hugoBasicExample というサンプル記事を予め用意してくれてるリポジトリがあるので、 このリポジトリをcloneして、hugo new theme &amp;lt;テーマ名&amp;gt; で見た目を確認しながら作ることが出来ます。
+ただ、このリポジトリは記事が全て英語なので、日本語の記事を自分で用意して、日本語フォントの様子を見たほうが良いです。
+Hugoのテンプレートで使える変数 基本的に公式ドキュメントを参考にします。例も充実しているので困ることはあまりないです。
+Hugo Themes から、やりたいことを実現しているテーマを見つけて、そのソースを参考にするのも良いです。
+シンタックスハイライト 以前はhighlight.jsを導入するなどしてシンタックスハイライトしていたのですが、
+現在のHugoではChromaを利用してデフォルトでシンタックスハイライトが可能になっています。 (v0.28以降)
+サポートされている言語も割と多いです。
+大したサイズではないですが、highlight.jsを読み込まなければそのぶん軽くなるので、言語のサポート率に不満がなければデフォルトのシンタックスハイライトに任せても良いと思います。
+その他 最後に参考リンク貼っておくので、リンク先を見るのが良いです。
+特にHugoのテーマを何個か作ったので知見をまとめてみるはめちゃくちゃ参考にさせて頂きました。
+参考Link 主に下記ページを参考にさせてもらいました。
+Hugo Documentation Hugoのテーマを何個か作ったので知見をまとめてみる github.com/gohugoio/hugoBasicExample</description></item><item><title>Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開する</title><link>https://ggdg.tkan.dev/post/build-your-sapper-app-with-github-actions-and-publish-it-on-github-pages/</link><pubDate>Mon, 11 Jan 2021 23:35:51 +0900</pubDate><guid>https://ggdg.tkan.dev/post/build-your-sapper-app-with-github-actions-and-publish-it-on-github-pages/</guid><description>概要 Sapperで作ったアプリをGitHub ActionsでビルドしてGitHub Pagesで公開しようとした所、 BaseURLの設定周りで思ったよりハマってしまったので、記事にしておきます。
+サンプルリポジトリ 公開しているページ (Sapperのデモアプリ) 実現したいこと アプリのexportはGitHub Actionsで実行する Sapperで作ったアプリをGitHub Pagesで公開する 公開先のURLは https://&amp;lt;username&amp;gt;.github.io/&amp;lt;repository name&amp;gt;/ とする 前提 Sapper v0.28.10 node v14.13.0 手順 アプリを作成 今回は公式ページに書いてあるテンプレートのアプリをデプロイしますので、 まずはテンプレートアプリをnpxでとってきます。
+❯ npx degit &amp;#34;sveltejs/sapper-template#rollup&amp;#34; sapper-gh-pages-gh-actions npx: installed 1 in 1.19s &amp;gt; cloned sveltejs/sapper-template#rollup to sapper-gh-pages-gh-actions ❯ cd sapper-gh-pages-gh-actions 現在はTypeScriptがサポートされているので、TypeScriptを有効化しておきます。
+下記コマンドを実行するだけです。
+❯ node scripts/setupTypeScript.js Adding TypeScript with Rollup... Converted to TypeScript. npm install を実行後、 npm run dev を実行して、動作確認してみます。</description></item><item><title>Svelteで Document インターフェイスを使いたい時は onMountライフサイクルを使う</title><link>https://ggdg.tkan.dev/post/in-svelte-use-the-onmount-lifecycle-when-use-the-document-interface/</link><pubDate>Sun, 10 Jan 2021 23:20:40 +0900</pubDate><guid>https://ggdg.tkan.dev/post/in-svelte-use-the-onmount-lifecycle-when-use-the-document-interface/</guid><description>※注意!! 動作検証はしてますが、勉強不足により、この方法がベストなのか分かってないです。参考程度にお願いいたします。
+何がしたいか こういうHTMLから
+&amp;lt;div id=&amp;#34;text&amp;#34;&amp;gt;Text&amp;lt;/div&amp;gt; 文字列 &amp;ldquo;Text&amp;rdquo; を取得したい。
+JavaScriptで普通にやるなら以下のように書けば良いが、Svelteではそうはいかなかった
+let t = document.getElementById(&amp;#39;text&amp;#39;); console.log(t.textContent); どうすればいいか onMountライフサイクルを使って、以下のように書けばOK (REPLでの動作確認)
+&amp;lt;script&amp;gt; import { onMount } from &amp;#39;svelte&amp;#39;; onMount(() =&amp;gt; { let t = document.getElementById(&amp;#39;text&amp;#39;); console.log(t.textContent); }); &amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;text&amp;#34;&amp;gt;Text&amp;lt;/div&amp;gt; あとがき Web Frontend 周辺何も分からないので、最近Svelteに手を出してみています。
+世界ではReactが流行っているようですが、なにかのタイミングでSvelteを見たときにEasyな気配がして選びました。
+まだTutorialを読んでいる途中ぐらいの段階ですが、公式ドキュメントも充実しているので印象は良いです。
+以前はサポートしていなかったようですが、現在はTypeScriptもサポートされています。
+今年中にSvelte + Sapperでアプリを作れたら嬉しいなーというお気持ちです。</description></item><item><title>2021年の抱負・目標</title><link>https://ggdg.tkan.dev/post/the-goal-for-2021/</link><pubDate>Fri, 01 Jan 2021 23:40:23 +0900</pubDate><guid>https://ggdg.tkan.dev/post/the-goal-for-2021/</guid><description>今年も目標を書いとく
+ブログを週に1つ書く なるべく技術ブログを書くようにする Pixivにあげる絵を月に1枚描く せっかく趣味が増えたので、何かしら残したい ISUCONの過去問を全部触る 本戦出場してみたい 毎日GitHubに草を生やす 毎日の運動を習慣化する スクワットちょっとやるぐらいから少しずつ増やす</description></item><item><title>2020年を振り返る</title><link>https://ggdg.tkan.dev/post/looking-back-2020/</link><pubDate>Thu, 31 Dec 2020 23:13:29 +0900</pubDate><guid>https://ggdg.tkan.dev/post/looking-back-2020/</guid><description>あと一時間もしないうちに2020年が終わるので、爆速で振り返る
+今年はコロナの影響で色々と生活に変化があった年なので、書くべきことは沢山あるが、もう時間がないのでざっくり概要だけ
+仕事 社内Redmineサーバの移設 去年末と今年の初めは主にこれをやってた 結構古いサーバだったのを、移設する感じのタスク 構成も変えたり、バージョン上げたりで割とバタバタやった 来年はこれの残タスクを潰しきりたい リモートワーク それまでの業務内容そのままではリモートワークが出来るような環境ではなかったので、それを可能にするための検証などなど色々手伝ったりした リモートワーク自体には不満ないが、会社まで徒歩10分未満の場所に住んでる意味がなくなって悔しい気持ちになってる 後輩のメンター的なこと 私の所属しているチームでは基本的に教えるのはチーム全員でやっており、メンタリング的な部分はマネージャーがやっていたが、今年は私がやってみるってことになった 私自身かなり手探りでマネージャーに相談しつつではあったが、目標としていたものは達成ぐらいに手助けできたのでいい経験だった プライベート 趣味・生活 去年に比べると睡眠失敗確率が減ったかも もう少し生活力を上げていきたい 2020年の初めに何かしら新しい趣味を探そうと思って、年の初めからVTuberをみはじめた 主に追ってるのはにじさんじ (おすすめです) Togglでトラッキングした結果みると一日平均5時間以上を費やすぐらいにハマった 外出しなくても楽しめる趣味にのめり込めたのは、世情的には幸運だったかもしれない コロナ禍で外出が減ったのもあり、筋力が消え失せた 大学の友人とDiscordのグループを作ったら夜な夜なそこで通話が発生するようになり、ストレス解消になった 9月ぐらいから趣味で絵を描きはじめた 来年は好きなキャラの絵を描いて、Pixivにあげるとかやってみたい 月に1枚描けたらいいな〜ぐらいの気持ち 技術 Go言語でつくるインタプリタを終盤まで読んで、簡単なインタプリタが出来るところまでやった Goに対する理解も深まったので良かった 来年は最後まで読み切りたい ISUCON10予選に参加した 直前にちょろっと過去問見ただけになってしまったので、普段から過去問やったりしたい 去年よりは手を出せる部分が増えていたのは良かった点 8月末からずっと24時間生活をTogglでトラッキングしている トラッキングと可視化が楽しくてやっているが、ポモドーロテクニックと組み合わせれるようなので、来年は集中のための手段として切り替えてもいいかなと思ってる ブログあんまり書けなかった 日々の知見を書き溜めて、もう少し意味のあるコンテンツにしたい 総評 時間なくて雑になってしまったけど、今年も幸せに生きられて良かった。</description></item><item><title>Gitでマルチバイト文字列がエスケープされる対策</title><link>https://ggdg.tkan.dev/post/how-to-avoid-escaping-multi-byte-strings-in-git/</link><pubDate>Sun, 25 Oct 2020 20:37:39 +0900</pubDate><guid>https://ggdg.tkan.dev/post/how-to-avoid-escaping-multi-byte-strings-in-git/</guid><description>デフォルトだとGitでマルチバイト文字列がエスケープされるのでその対策
+どうすればいいのか？ core.quotepath オプションを false にする
+下記コマンドを実行する
+git config --global core.quotepath false またはgitconfigに下記記載する
+[core] quotepath = false core.quotepath is なんのオプション このオプションがtrue(デフォルト設定)になっていると、マルチバイト文字列がCのエスケープ方法と同じようにエスケープされる。
+UTF-8の&amp;quot;μ&amp;quot;を例にすると、
+&amp;ldquo;μ&amp;quot;はhex codeで&amp;quot;0xC2 0xB5&amp;quot;なので、これを10進数にして&amp;rdquo;\302\265&amp;quot;にエスケープされる。
+日本語文字列も同じ要領でエスケープされるので、日本語をファイル名に含むファイルをGit管理するときは false にしたほうが良い。
+参考資料 Git - git-config Documentation https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath</description></item><item><title>Vimの設定整理した(2020年版)</title><link>https://ggdg.tkan.dev/post/vim-settings-in-2020/</link><pubDate>Thu, 15 Oct 2020 00:55:32 +0900</pubDate><guid>https://ggdg.tkan.dev/post/vim-settings-in-2020/</guid><description>Vimの設定がごちゃごちゃしてきていたので、久々に vimrc 大掃除して使っていないプラグインを消したりキーマップを考え直したりしました。
+プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておきます。
+私の今のvimrc
+整理する上で意識したこと features=huge でコンパイルされた Vim8(&amp;gt;=8.0.1453) で動作すること Neovim のことは考えない Windows での動作は考えない 基本的に .vimrc 1ファイルを管理する features=huge でコンパイルされた Vim8(&amp;gt;=8.0.1453) で動作すること 私が開発したくなるような環境では Vim8(&amp;gt;=8.0.1453) が入っているか、容易にインストール可能なはずなので、 Vim7 以下については考慮しないようにしました。
+features=huge だけだと、 +python3, +lua が入りませんが、有効化されているか確認して必要があれば有効化する等の作業が個人的に煩わしいため、切り捨てました。
+Neovim のことは考えない 私はNeovimを使用していないので、そもそも検討していません。
+たまに情報を追ってはいるのですが、現状「どうしても Neovim でないと駄目！」って機能が個人的には無いので乗り換える予定もないです。
+Windows での動作は考えない 現在、家にも職場にも Windows 環境が無いので、検討しないことにしました。
+WSL2 もあるので。
+基本的に .vimrc 1ファイルを管理する 1ファイルに全部の設定を書き、プラグインのロード、プラグインの設定等のカテゴリごとに fold しています。
+キーマップの割り当て 下手なマッピングをするとデフォルトの設定を上書きしてしまったり、覚えられないキーマップを設定してしまったりするため、ある程度規則性を持たせることにしました。
+&amp;lt;Leader&amp;gt; キーはデフォルトの \ をそのまま使用し、プラグインのショートカット等に使用するキーとして以下の5キーを利用します。
+&amp;lt;Leader&amp;gt; キー (\ キー) プラグイン用のキー。デフォルトでは何も割り当てられていないので自由に使える。
+他のキーに変えたりはせず、そのまま \ をプレフィックスキーとして使用します。
+&amp;lt;Enter&amp;gt; キー デフォルトだと &amp;ldquo;カーソルを N 行下の先頭の CHAR へ移動するキー。&amp;quot;(Nj&amp;lt;C-^&amp;gt;と同等のハズ)</description></item><item><title>ISUCON10予選に参加して敗北しました</title><link>https://ggdg.tkan.dev/post/isucon10/</link><pubDate>Thu, 17 Sep 2020 17:11:43 +0900</pubDate><guid>https://ggdg.tkan.dev/post/isucon10/</guid><description>@Rasino66 と2人で ISUCON10 の予選に参加してきました。
+残念ながら本戦に出場は出来ませんでしたが、学びが多い面白い問題でした。
+Discordで通話しつつ画面を共有してやり取りしていましたが、これは普段から同じ手法で2人オンライン読書会してたりするので、
+特に困ることもなかったです。 コードの編集等は難しいことを考えずに直接サーバへSSHした上で、Vimで編集していました。
+言語はGoを選択しました。
+前半 最序盤はベンチマークが回せなかったので、事前に準備していた通りに以下を行いました。
+ここまでは練習通りに出来ていて良かったです。
+サーバに必要なものを入れる pt-query-digest kataribe Vimの設定等 MySQL, Nginxのログ周りを出力するように設定する マニュアルを読む 上記準備が終わった頃にはベンチマークが回せるようになっていたので、とりあえず初回のベンチマークを実行し、
+MySQLのCPU使用率が支配的であることを確認しました。
+pt-query-digestの結果から
+以下にインデックスを追加し、スコアが少し延びたことを確認しましたが、依然としてMySQLのCPU使用率が高いことを確認したため、ダメそうな箇所を改善し始めました。
+estateテーブル door_width door_height popularity rent chairテーブル price stock popularity どうも以下のようなクエリが実行されたときにインデックスを使えておらず、
+詳しく見てみると popularity を DESC で ORDER BY, その後 id を ASCで ORDER BYしているのが駄目なようです。
+mysql&amp;gt; explain SELECT * FROM estate WHERE rent &amp;gt;= 100000 AND rent &amp;lt; 150000 ORDER BY popularity DESC, id ASC LIMIT 25; +----+-------------+--------+------------+------+---------------+------+---------+------+-------+----------+-----------------------------+ | id | select_type | table | partitions | type | possible_keys | key | key_len | ref | rows | filtered | Extra | +----+-------------+--------+------------+------+---------------+------+---------+------+-------+----------+-----------------------------+ | 1 | SIMPLE | estate | NULL | ALL | idx_rent | NULL | NULL | NULL | 29533 | 30.</description></item><item><title>(技術的に)私が知っていること・知らないこと</title><link>https://ggdg.tkan.dev/post/what_i_know_and_dont_know/</link><pubDate>Fri, 24 Jul 2020 02:44:01 +0900</pubDate><guid>https://ggdg.tkan.dev/post/what_i_know_and_dont_know/</guid><description>概要 以前みかけたブログ記事 2018年の段階で私が知らないこと に影響を受けて書いてみました。
+とりあえず雑に書いた部分がかなりあるので後日、追記修正すると思います。
+ある程度カテゴリがあったほうが列挙しやすいと思ったので、 GitHubの有名なリポジトリである developer-roadmap を参考にカテゴリを用意しました。
+developer-roadmapにはFront-end, Back-end, DevOpsの分岐がありますが、
+今の仕事がDevOpsに近いので、以下のカテゴリ列挙もDevOpsに書かれている内容に準じています。
+Git, GitHub ターミナルでの基本的な操作 データ構造とアルゴリズム ライセンス セマンティック バージョニング SSH HTTP/HTTPS デザインパターン 文字コード プログラミング言語 OS基礎 CLIツール Linuxディストリビューション ネットワーク プロトコル サーバアプリケーション Infrastructure as Code CI/CDツール ソフトウェアモニタリング クラウドプロバイダ クラウドデザインパターン 各カテゴリ Git, GitHub ブランチ切ってcommit, PR出す等の普通の使い方はしたことがある 時々分からないこともあるが、適宜ググって解決出来る ターミナルでの基本的な操作 GNU Coreutilsのコマンドを9割ぐらいは使ったことがある すべてのコマンドのオプションを使ったことがあるわけではないので、知らない機能もあるはず 「Apacheの Common Log Format からアクセスの多い時間帯を集計して」というレベルの簡単なワンライナーならその場でgrep, sed, awk等と組み合わせて30秒以内にシュッと作れる ワンライナーにperlやawkのループが必要なレベルで複雑化してくると、ググらないと作れなくなってくる データ構造とアルゴリズム 線形探索、二分探索がどういうものか知っている クイックソート, DNP, BFS 等は存在は知っているが、説明しろと言われると怪しい 実装は出来ない ライセンス ソフトウェアのライセンス Apache License 2.</description></item><item><title>Commandキーをtmuxのプレフィックスキーとして使う on Iterm2</title><link>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2/</link><pubDate>Mon, 11 May 2020 04:50:09 +0900</pubDate><guid>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2/</guid><description>tmuxのプレフィックスキーに最適なキーを探して数年が経ちました。
+Vimのキーマップやターミナルのショートカットを考慮するとプレフィックスキーとして使える組み合わせってほぼ残って無いです。
+(デフォルトのCtrl+aとか、shellでめっちゃ多用します)
+なので色々な組み合わせを試してきたんですが、最近MacだったらCommandキーをプレフィックスキーとして使えば良いのでは？
+と考えて設定してみたら結構いい感じです。
+Commandキーをプレフィックスキーとして使うメリットとしては
+押しやすい位置にある ターミナルで動くツール(vim, bash, 他CLIツール類)とショートカットでバッティングすることが無い(多分) とかが挙がります。
+親指で押せる位置にあるというのは、ターミナルで生活する者としては結構重要です。
+小指とかで押すCtrl等をプレフィックスキーとして使用すると小指が死んでしまいます。
+Commandキー単押しでプレフィックスキーとして動作させることも可能ですし、 Commandキー + ' を tmuxのpane分割キーとして設定すること等も可能です。 (これも結構メリット)
+前提 下記環境で動作確認を行っています。 macOS Catalina バージョン 10.15.5 iTerm2 Build 3.3.11 tmux 3.0a 設定方法 Iterm2にはキーボードショートカットを自分で登録する機能が最初からついてます。
+ショートカットを入力した際に色々なアクション(スクロールとかコピー等)を実行できるのですが、そんなアクションの中に &amp;ldquo;Send Hex Code&amp;rdquo; というアクションがあります。その名の通りショートカットを入力した際にASCIIコードを送信してくれる機能です。
+こいつを利用して、Commandキーを入力した際にtmuxのプレフィックスキーとして設定したキーのASCIIコードを送信してもらいます。
+どのキーがASCIIコードの16進数で何に該当するのかは下記サイトとかみると分かります。
+ＡＳＣＩＩコード表: https://ja.wikipedia.org/wiki/ASCII
+tmux側の設定 実はtmuxのprefix設定が何でも良いわけじゃないです。(ここが若干デメリット)
+tmux的には Ctrl-&amp;lt;Space&amp;gt; をプレフィックスキーとして使うことが出来るのですが、
+上記 &amp;ldquo;send Hex Code&amp;rdquo; の機能としては上記ASCIIコード表に載っているような文字もしくは制御文字しか対応していません。
+なので普段使わなさそうな制御文字をプレフィックスキーとして利用します。
+ASCIIコードの制御文字とその説明はWikipediaみると概要は分かるかと思います。
+Wikipedia 制御文字: https://ja.wikipedia.org/wiki/%E5%88%B6%E5%BE%A1%E6%96%87%E5%AD%97
+私は Ctrl + \ をtmuxのプレフィックスキーとして設定しました。 (制御文字としては File Separator だそうです。)</description></item><item><title>Using the Command key as a prefix key for tmux in Iterm2</title><link>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2-en/</link><pubDate>Mon, 11 May 2020 04:50:09 +0900</pubDate><guid>https://ggdg.tkan.dev/post/use-command-key-as-tmux-prefix-on-iterm2-en/</guid><description>I&amp;rsquo;ve been looking for the best key for a tmux prefix key for several years now.
+Considering Vim&amp;rsquo;s keymap and terminal shortcuts, it&amp;rsquo;s a prefix key. There are almost no usable combinations left.
+(Ctrl+a, which is set as the default prefix key on tmux, is used for bash It&amp;rsquo;s covered with a shell.)
+So I&amp;rsquo;ve been experimenting with various combinations, and recently, if I were on a Mac, I&amp;rsquo;d use the Command key.</description></item><item><title>Hugo で生HTMLを書く方法</title><link>https://ggdg.tkan.dev/post/using-html-in-hugo/</link><pubDate>Thu, 16 Jan 2020 19:15:30 +0900</pubDate><guid>https://ggdg.tkan.dev/post/using-html-in-hugo/</guid><description>Hugoの記事内でTwitterの埋め込みなどをしたくなったとき、生のHTMLを使ってほしい時があったので対応方法を調べて導入した。
+参考: 【HUGO】マークダウンの中にHTMLコードを書いて表示する方法
+HugoのThemeに {{ .Innner }} というショートコードを導入する必要があるらしい。
+利用しているThemeをcloneして &amp;ldquo;layouts&amp;rdquo; フォルダ内に &amp;ldquo;rawhtml.html&amp;rdquo; というファイルを作成。
+ファイルに {{ .Inner }} とだけ記載すると↓のように書くことで生HTMLが記事内で使えるようになった 🎉🎉
+{{&amp;lt; rawhtml &amp;gt;}} &amp;lt;a href=&amp;quot;/posts&amp;quot;&amp;gt;ほげほげ&amp;lt;/a&amp;gt; {{&amp;lt; /rawhtml &amp;gt;}} 試しに去年最後の散財の様子を貼ってみる
+（多分）今年最後の散財が届いた pic.twitter.com/VtUgo4H3ia
+&amp;mdash; tkan (@tkancf) December 21, 2019 いい感じだ</description></item><item><title>2020年の抱負</title><link>https://ggdg.tkan.dev/post/resolution-2020/</link><pubDate>Thu, 09 Jan 2020 01:12:57 +0900</pubDate><guid>https://ggdg.tkan.dev/post/resolution-2020/</guid><description>2020年の抱負というか目標を書いとく
+ISUCONの予選問題過去問を全問解く Go言語の素振りを兼ねているので、言語は全てGo言語を使って、予選を突破できる点数を取れるまでやる https://github.com/matsuu/vagrant-isucon のVagrantfileを使わせてもらう想定なので以下の7問 ISUCON3予選 ISUCON4予選 ISUCON5予選 2台構成 ISUCON6予選 2台構成 ISUCON7予選 2台構成 ISUCON8予選 2台構成 ISUCON9予選 1台構成 ランニング 適度な運動が睡眠には良いらしいので、習慣化する 走れそうな靴が一足も無いので、明日買いに行く 恋愛 たまに独り身が寂しい時があるので、積極的に動きたい まずは異性と会話をする所から&amp;hellip; 技術書を12冊以上読む 月に最低でも1冊のペースで ブログを月に2本以上書く</description></item><item><title>エンジニアの知的生産術を読みました</title><link>https://ggdg.tkan.dev/post/read-the-intellectual-production-technique-for-engineer/</link><pubDate>Tue, 24 Dec 2019 00:27:26 +0900</pubDate><guid>https://ggdg.tkan.dev/post/read-the-intellectual-production-technique-for-engineer/</guid><description>エンジニアの知的生産術 ―効率的に学び、整理し、アウトプットする
+2019年もうすぐ終わってしまいますが、振り返ってみるとインプットもアウトプットも出来ていませんでした。
+2020年の知的生産のためのヒントになればと思い、購入して読んでみました。
+各章読むごとに今までなんとなくやっていた部分であったり、意識出来ていなかったことが見事に言語化されていて、参考になりました。
+各章で取り入れられそう、取り入れられると良さそうだと感じた要素は下記内容でした。
+第1章 やる気を出すために知りたい部分から学ぶ 遅延評価的勉強法 段階的に読む 第2章 タスクを絞るために気になることを全て集める 大きすぎるタスクは分割する 第3章 繰り返しアウトプットすることによる記憶への定着 第4章 「見出しへ着目して大雑把に概要を把握してから読む」という読み方 第5章 情報を書き出してから整理する この時点で書き出す情報の重複は気にしない 第6章 情報を集めて繋がりを探す・寝かせる 第7章 かけ合わせによる差別化戦略 第2章の 「やる気を出すために、一度気になることを全部一箇所に集める」というテクニックは、
+まさに手持ちのタスクが増えて全部が面倒くさくなっていた私にとって、ちょうど求めていたものでした。第2章を読んでその場でエディタに気になることをざっと書き出すことで、とりあえずタスクに手を付けられました。
+第3章のアウトプットによる記憶への定着は、このブログをアウトプットの場として活用できたら良いなと思っています。
+まとめ 今の私にはよく分からないなと感じた部分は本書で勧められている通り流し読みした部分もあるので、定期的に読み返してみたいとおもいます。
+何かを学んだり、学ぶ対象に迷ったりした時には特に読み返すと、その時には分かることがありそうです。
+そろそろ2019年も終わるのでかけ合わせによる差別化戦略を意識して2020年以降の具体的な目標を立てて行きたい所です。</description></item><item><title>2019年を振り返る</title><link>https://ggdg.tkan.dev/post/looking-back-2019/</link><pubDate>Fri, 13 Dec 2019 02:16:07 +0900</pubDate><guid>https://ggdg.tkan.dev/post/looking-back-2019/</guid><description>はじめに 振り返るといいつつ、日記みたいな内容
+振り返り 大体Twitterをみれば何したか分かる。
+1/8 早速キーボード買ってる Keyboardio : 329$ 今は使ってないので、うちの押入れの肥やしと化してる 手が滑った pic.twitter.com/aDFdUN9XeQ
+&amp;mdash; tkan (@tkancf) January 7, 2019 1/9 ボヘミアン・ラプソディ観に行ったらしい 今年は去年に比べると映画割と行った気がする 昨日ボヘミアン・ラプソディ観に行ったけど良かった / “「クイーン」B・メイ＆R・テイラーが明かす、映画「ボヘミアン・ラプソディ」と事実の違い : 映画ニュース - 映画.com” https://t.co/vG8EAVvl6g
+&amp;mdash; tkan (@tkancf) January 10, 2019 1/15 深夜に家系ラーメン食ってる もう少し健康に気を使ってほしい この時間のこれは良くないね、大変良くない (@ 鶴と私の恩返し 新宿御苑店 in 新宿区, 東京都) https://t.co/8cxHiwOiUe pic.twitter.com/lhIPxp5W1P
+&amp;mdash; tkan (@tkancf) January 15, 2019 1/20 Fate/stay nightのナイター観に行ってる このアクティブさは悪くない、評価したい ｷﾀｰ pic.twitter.com/KIx2TNPd1x</description></item><item><title>VimConf2019に行ってきました</title><link>https://ggdg.tkan.dev/post/vimconf2019/vimconf2019-report/</link><pubDate>Tue, 05 Nov 2019 20:25:42 +0900</pubDate><guid>https://ggdg.tkan.dev/post/vimconf2019/vimconf2019-report/</guid><description>はじめに VimConf2019に行ってきました。
+毎年同じことを言ってますが、今年も最高of最高でした。
+運営スタッフ、登壇者の方々、参加者の皆様本当にありがとうございました。
+セッションの内容 どのトーク内容も最高だったのですが、個人的にグッと来たものについて書きます。
+Keynote - Vim Renaissance vim-lspの作者であるPrabir Shrestha(@prabirshrestha)さんのトークです。
+普段から vim-lsp, asyncomplete.vim, async.vim とprabirshrestha wareでVim活していると言っても過言では無いので、
+楽しみにしていたトークでもありました。
+VimとNeovim の両方を対応する理由を質問された時に、 「選択の自由があるのは良いことだしみんなに使ってほしいから」的なことをおっしゃっていたのが印象的でした。
+Your Vim is Only for You VimConfの司会でもある@moppさんのトークです。
+vimrcをどう育てていくかという話だったのですが、 自分のvimrcを見返してみると、ポータビリティが微妙な部分や
+自分でも何故設定しているのかよく分かっていない部分が幾つかあったので、この機会にvimrcの整理をしなきゃだなと考えながら聞いていました。
+「大きくなったvimrcの機能を抽出してVim Pluginを作る」 と聞いてなるほど〜となりました。
+Grown up from Vim User to Vim plugin developer side Japanese IKさん(@get_me_power)のトークです。
+OSSを使う側から、開発に協力していく側に成長してくという話でした。
+発表がとても上手く、引き込まれました。
+私は普段PR投げたり、Issue報告したりなどほとんどせず、ユーザ側としての立場で居続けているので、やっていくべきですね。
+やっていきます。
+LT含め他にも素敵な発表だらけでした。
+YouTubeにも動画がアップロードされるはずなので、参加していない方はそちらを是非見てほしいです。
+懇親会 懇親会でもLTがあり、@rbtnn さんの Vim-TabSideBar が個人的にも使ってみたかったのでLT後に直接PCの画面を見せて頂きに行ったりしました。
+私はVimのTab機能を結構常用しているので、是非ともVim本体にmergeされて欲しい機能なのですが、
+Tab機能は海外だとあまり使われていないらしい (Bram氏がそう言っていたとのこと)です。
+@rbtnn さんのtabsidebarブランチをビルドすれば使えるので、使わせて頂こうと思ってます。
+LTでドラを鳴らしていた @aomoriringo さんには昨年のVimConf懇親会で何度かおかわりを頂いたブランデーのお礼しつつ、色々VimConfの運営についてお話伺ったりしました。
+スタッフの方々の働き無しには毎年こんなに最高のカンファレンスは開催出来ないと思います。
+毎度頭が下がる思いです。ありがとうございました。
+来年も是非参加したいです。</description></item></channel></rss>

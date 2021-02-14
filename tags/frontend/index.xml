@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frontend on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/frontend/</link><description>Recent content in Frontend on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 10 Jan 2021 23:20:40 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/frontend/index.xml" rel="self" type="application/rss+xml"/><item><title>Svelteで Document インターフェイスを使いたい時は onMountライフサイクルを使う</title><link>https://ggdg.tkan.dev/post/in-svelte-use-the-onmount-lifecycle-when-use-the-document-interface/</link><pubDate>Sun, 10 Jan 2021 23:20:40 +0900</pubDate><guid>https://ggdg.tkan.dev/post/in-svelte-use-the-onmount-lifecycle-when-use-the-document-interface/</guid><description>※注意!! 動作検証はしてますが、勉強不足により、この方法がベストなのか分かってないです。参考程度にお願いいたします。
+何がしたいか こういうHTMLから
+&amp;lt;div id=&amp;#34;text&amp;#34;&amp;gt;Text&amp;lt;/div&amp;gt; 文字列 &amp;ldquo;Text&amp;rdquo; を取得したい。
+JavaScriptで普通にやるなら以下のように書けば良いが、Svelteではそうはいかなかった
+let t = document.getElementById(&amp;#39;text&amp;#39;); console.log(t.textContent); どうすればいいか onMountライフサイクルを使って、以下のように書けばOK (REPLでの動作確認)
+&amp;lt;script&amp;gt; import { onMount } from &amp;#39;svelte&amp;#39;; onMount(() =&amp;gt; { let t = document.getElementById(&amp;#39;text&amp;#39;); console.log(t.textContent); }); &amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;text&amp;#34;&amp;gt;Text&amp;lt;/div&amp;gt; あとがき Web Frontend 周辺何も分からないので、最近Svelteに手を出してみています。
+世界ではReactが流行っているようですが、なにかのタイミングでSvelteを見たときにEasyな気配がして選びました。
+まだTutorialを読んでいる途中ぐらいの段階ですが、公式ドキュメントも充実しているので印象は良いです。
+以前はサポートしていなかったようですが、現在はTypeScriptもサポートされています。
+今年中にSvelte + Sapperでアプリを作れたら嬉しいなーというお気持ちです。</description></item></channel></rss>

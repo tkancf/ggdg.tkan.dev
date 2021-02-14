@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vimrc on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/vimrc/</link><description>Recent content in vimrc on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 15 Oct 2020 00:55:32 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/vimrc/index.xml" rel="self" type="application/rss+xml"/><item><title>Vimの設定整理した(2020年版)</title><link>https://ggdg.tkan.dev/post/vim-settings-in-2020/</link><pubDate>Thu, 15 Oct 2020 00:55:32 +0900</pubDate><guid>https://ggdg.tkan.dev/post/vim-settings-in-2020/</guid><description>Vimの設定がごちゃごちゃしてきていたので、久々に vimrc 大掃除して使っていないプラグインを消したりキーマップを考え直したりしました。
+プラグインの選定基準、キーマップの設定基準等を思い返すためにも一度まとめておきます。
+私の今のvimrc
+整理する上で意識したこと features=huge でコンパイルされた Vim8(&amp;gt;=8.0.1453) で動作すること Neovim のことは考えない Windows での動作は考えない 基本的に .vimrc 1ファイルを管理する features=huge でコンパイルされた Vim8(&amp;gt;=8.0.1453) で動作すること 私が開発したくなるような環境では Vim8(&amp;gt;=8.0.1453) が入っているか、容易にインストール可能なはずなので、 Vim7 以下については考慮しないようにしました。
+features=huge だけだと、 +python3, +lua が入りませんが、有効化されているか確認して必要があれば有効化する等の作業が個人的に煩わしいため、切り捨てました。
+Neovim のことは考えない 私はNeovimを使用していないので、そもそも検討していません。
+たまに情報を追ってはいるのですが、現状「どうしても Neovim でないと駄目！」って機能が個人的には無いので乗り換える予定もないです。
+Windows での動作は考えない 現在、家にも職場にも Windows 環境が無いので、検討しないことにしました。
+WSL2 もあるので。
+基本的に .vimrc 1ファイルを管理する 1ファイルに全部の設定を書き、プラグインのロード、プラグインの設定等のカテゴリごとに fold しています。
+キーマップの割り当て 下手なマッピングをするとデフォルトの設定を上書きしてしまったり、覚えられないキーマップを設定してしまったりするため、ある程度規則性を持たせることにしました。
+&amp;lt;Leader&amp;gt; キーはデフォルトの \ をそのまま使用し、プラグインのショートカット等に使用するキーとして以下の5キーを利用します。
+&amp;lt;Leader&amp;gt; キー (\ キー) プラグイン用のキー。デフォルトでは何も割り当てられていないので自由に使える。
+他のキーに変えたりはせず、そのまま \ をプレフィックスキーとして使用します。
+&amp;lt;Enter&amp;gt; キー デフォルトだと &amp;ldquo;カーソルを N 行下の先頭の CHAR へ移動するキー。&amp;quot;(Nj&amp;lt;C-^&amp;gt;と同等のハズ)</description></item></channel></rss>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>blog on ggdG:wq!</title><link>https://ggdg.tkan.dev/tags/blog/</link><description>Recent content in blog on ggdG:wq!</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 31 Jan 2021 22:12:56 +0900</lastBuildDate><atom:link href="https://ggdg.tkan.dev/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoのテーマを自作したので、知見メモ</title><link>https://ggdg.tkan.dev/post/i-make-a-theme-for-hugo/</link><pubDate>Sun, 31 Jan 2021 22:12:56 +0900</pubDate><guid>https://ggdg.tkan.dev/post/i-make-a-theme-for-hugo/</guid><description>概要 Hugoのテーマは色々OSSのものがあるんですが、自分好みに自由できるテーマが欲しくなったので自作してみました。 そのときに得た知見のメモです。
+作ったテーマは公開してますが、現状自分のブログ用にハードコードしちゃってる部分があります。
+Tips テーマ自作のはじめ方 hugoBasicExample というサンプル記事を予め用意してくれてるリポジトリがあるので、 このリポジトリをcloneして、hugo new theme &amp;lt;テーマ名&amp;gt; で見た目を確認しながら作ることが出来ます。
+ただ、このリポジトリは記事が全て英語なので、日本語の記事を自分で用意して、日本語フォントの様子を見たほうが良いです。
+Hugoのテンプレートで使える変数 基本的に公式ドキュメントを参考にします。例も充実しているので困ることはあまりないです。
+Hugo Themes から、やりたいことを実現しているテーマを見つけて、そのソースを参考にするのも良いです。
+シンタックスハイライト 以前はhighlight.jsを導入するなどしてシンタックスハイライトしていたのですが、
+現在のHugoではChromaを利用してデフォルトでシンタックスハイライトが可能になっています。 (v0.28以降)
+サポートされている言語も割と多いです。
+大したサイズではないですが、highlight.jsを読み込まなければそのぶん軽くなるので、言語のサポート率に不満がなければデフォルトのシンタックスハイライトに任せても良いと思います。
+その他 最後に参考リンク貼っておくので、リンク先を見るのが良いです。
+特にHugoのテーマを何個か作ったので知見をまとめてみるはめちゃくちゃ参考にさせて頂きました。
+参考Link 主に下記ページを参考にさせてもらいました。
+Hugo Documentation Hugoのテーマを何個か作ったので知見をまとめてみる github.com/gohugoio/hugoBasicExample</description></item></channel></rss>
