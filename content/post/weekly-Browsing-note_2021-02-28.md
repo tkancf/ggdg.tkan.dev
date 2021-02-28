@@ -5,7 +5,7 @@ categories: ["memo"]
 tags: ["今週のブラウジングメモ"]
 thumbnail: "images/avatar2020.jpg"
 description: "今週インターネットで見かけた中で私が「ｵｯ」と思ったものを、ジャンル不問でメモと共にまとめとくログです。"
-draft: true
+draft: false
 
 ---
 
